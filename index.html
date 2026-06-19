@@ -8,11 +8,13 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="ธรรมะวันนี้">
+    <meta name="author" content="นกกระยางขาว">
+    <meta name="copyright" content="งานเรียบเรียง การคัดเลือก การจัดระบบ และการออกแบบ © 2026 นกกระยางขาว">
     <title>ธรรมะวันนี้ | Dhamma Today</title>
-    <link rel="manifest" href="./manifest.webmanifest?v=20260619-14">
+    <link rel="manifest" href="./manifest.webmanifest?v=20260620-18">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png">
     <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
-    <link rel="stylesheet" href="./styles.css?v=20260619-14">
+    <link rel="stylesheet" href="./styles.css?v=20260620-18">
   </head>
   <body>
     <div class="app-frame">
@@ -63,7 +65,11 @@
         </section>
       </main>
 
-      <footer class="app-credit">เรียบเรียงหลักธรรมและคำสอน จากครูอาจารย์ โดย นกกระยางขาว</footer>
+      <footer class="app-credit">
+        <p>เรียบเรียงหลักธรรมและคำสอน จากครูอาจารย์ โดย นกกระยางขาว</p>
+        <p>งานเรียบเรียง การคัดเลือก การจัดระบบ และการออกแบบ &copy; 2026 นกกระยางขาว</p>
+        <a href="mailto:loveiscomingsoon@gmail.com">ติดต่อหรือแจ้งการนำผลงานไปใช้</a>
+      </footer>
 
       <nav class="bottom-nav" aria-label="เมนูหลัก">
         <button class="nav-button active" type="button" data-view="today" aria-current="page">
@@ -74,6 +80,10 @@
           <i data-lucide="bookmark" aria-hidden="true"></i>
           <span>ที่บันทึก</span>
         </button>
+        <a class="nav-button" href="./books/dhamma-pocket-book.html" aria-label="อ่านธรรมะพกพา เล่ม 1 ออนไลน์">
+          <i data-lucide="book-open" aria-hidden="true"></i>
+          <span>อ่านออนไลน์</span>
+        </a>
       </nav>
     </div>
 
@@ -90,6 +100,7 @@
         </div>
         <p>ข้อธรรมสั้น ๆ สำหรับใช้เตือนใจในชีวิตประจำวัน โดยเรียบเรียงจากหลักพระพุทธศาสนาและคำสอนที่ตรวจสอบชื่อผู้สอนได้</p>
         <p class="dialog-note">ชื่อครูอาจารย์แสดงเฉพาะข้อความที่มีต้นฉบับรองรับ ข้อความเรียบเรียงจะระบุไว้ชัดเจนและไม่อ้างเป็นคำกล่าวตรง การระบุแหล่งอ้างอิงช่วยให้ตรวจสอบย้อนหลังได้ แต่ไม่ใช่การรับรองสิทธิ์เผยแพร่หรือคำปรึกษาทางกฎหมาย</p>
+        <p class="dialog-note rights-note">สิทธิในคำสอน หนังสือ และวิดีโอต้นฉบับเป็นของผู้สร้างสรรค์หรือผู้ทรงสิทธิเดิม การนำงานเรียบเรียง การจัดหมวด หรือรูปแบบแอปนี้ไปเผยแพร่ซ้ำ กรุณาติดต่อ <a href="mailto:loveiscomingsoon@gmail.com">loveiscomingsoon@gmail.com</a></p>
         <a class="book-link" href="./books/dhamma-pocket-book.html">อ่านธรรมะวันนี้ ฉบับพกพา</a>
       </form>
     </dialog>
@@ -97,7 +108,7 @@
     <p class="toast" id="toast" role="status" aria-live="polite" hidden></p>
 
     <script src="./assets/lucide.min.js?v=20260618-2"></script>
-    <script src="./content/dhamma-library.js?v=20260619-14"></script>
-    <script src="./app.js?v=20260619-14"></script>
+    <script src="./content/dhamma-library.js?v=20260620-18"></script>
+    <script src="./app.js?v=20260620-18"></script>
   </body>
 </html>

@@ -436,10 +436,20 @@ h1 {
   text-align: center;
 }
 
+.app-credit p {
+  margin-bottom: 2px;
+}
+
+.app-credit a,
+.rights-note a {
+  color: #4c6758;
+  text-underline-offset: 3px;
+}
+
 .bottom-nav {
   min-height: 74px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   position: sticky;
   z-index: 10;
   bottom: 0;
@@ -460,6 +470,7 @@ h1 {
   background: transparent;
   font-size: 0.75rem;
   font-weight: 700;
+  text-decoration: none;
 }
 
 .nav-button::before {
@@ -528,6 +539,10 @@ h1 {
   padding: 12px;
   background: var(--soft);
   font-size: 0.82rem;
+}
+
+.rights-note {
+  margin-top: 10px;
 }
 
 .book-link {

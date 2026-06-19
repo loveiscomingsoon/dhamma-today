@@ -23,9 +23,11 @@ function dateKey() {
 }
 
 function getDailyTeachings() {
-  const seed = Number(dateKey().replaceAll("-", "")) + shuffleOffset * 3;
-  const start = seed % teachings.length;
-  const daily = [0, 1, 2].map((offset) => teachings[(start + offset) % teachings.length]);
+  const [year, month, day] = dateKey().split("-").map(Number);
+  const dayNumber = Math.floor(new Date(year, month - 1, day).getTime() / 86400000);
+  const setIds = [...new Set(teachings.map((item) => item.setId))];
+  const setId = setIds[(dayNumber + shuffleOffset) % setIds.length];
+  const daily = teachings.filter((item) => item.setId === setId);
   const sharedId = getSharedId();
   if (!sharedId || shuffleOffset > 0) return daily;
 
@@ -228,7 +230,7 @@ refreshIcons();
 
 if ("serviceWorker" in navigator && location.protocol !== "file:") {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./service-worker.js?v=20260619-14").catch(() => {
+    navigator.serviceWorker.register("./service-worker.js?v=20260620-18").catch(() => {
       // The app remains fully usable online if service-worker registration is unavailable.
     });
   });

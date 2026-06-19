@@ -28,6 +28,15 @@ footer {
   background: var(--paper);
 }
 
+footer p {
+  margin-bottom: 3px;
+}
+
+footer a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+
 .book-cover {
   min-height: 78vh;
   display: grid;
