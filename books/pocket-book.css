@@ -1,0 +1,189 @@
+:root {
+  color-scheme: light;
+  --ink: #26382f;
+  --muted: #657168;
+  --paper: #fffdf9;
+  --warm: #f2e3d0;
+  --line: #d9d2c7;
+  --accent: #8a6240;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #ecefe9;
+  font-family: "Thonburi", "Noto Sans Thai", Tahoma, sans-serif;
+  line-height: 1.8;
+}
+
+.book-cover,
+main,
+footer {
+  width: min(100%, 720px);
+  margin-inline: auto;
+  background: var(--paper);
+}
+
+.book-cover {
+  min-height: 78vh;
+  display: grid;
+  place-items: center;
+  padding: 64px 28px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+}
+
+.cover-inner img {
+  width: 104px;
+  height: 104px;
+  object-fit: contain;
+}
+
+.kicker,
+.section-label,
+.chapter-number {
+  margin: 18px 0 4px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 12px 0 0;
+  font-family: "Thonburi", "Noto Serif Thai", serif;
+  font-size: clamp(2.4rem, 8vw, 4.6rem);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+.cover-note {
+  margin-top: 64px;
+  color: var(--muted);
+}
+
+.book-tools {
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  width: min(100%, 720px);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-inline: auto;
+  padding: 10px 18px;
+  background: rgba(255, 253, 249, 0.96);
+  border-bottom: 1px solid var(--line);
+}
+
+.book-tools a,
+.book-tools button {
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+main { padding: 54px clamp(24px, 8vw, 72px); }
+
+.preface,
+.editorial-note { margin-bottom: 70px; }
+
+.preface h2,
+.chapter h2 {
+  margin: 6px 0 16px;
+  font-family: "Thonburi", "Noto Serif Thai", serif;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.preface h2 { font-size: 1.65rem; }
+
+.book-count { color: var(--accent); font-weight: 700; }
+
+.chapter {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px 0;
+  border-top: 1px solid var(--line);
+}
+
+.chapter h2 { font-size: clamp(1.55rem, 5vw, 2.15rem); line-height: 1.45; }
+
+.teaching-text { margin: 0; font-size: 1.16rem; line-height: 1.95; }
+
+.attribution { margin-top: 18px; color: var(--muted); font-size: 0.82rem; }
+
+.practice {
+  margin-top: 30px;
+  padding: 18px 20px;
+  background: var(--warm);
+  border-left: 3px solid #b99068;
+}
+
+.practice p { margin: 0 0 6px; color: var(--accent); font-size: 0.78rem; font-weight: 700; }
+.practice strong { font-size: 1rem; font-weight: 500; }
+
+.chapter-sources {
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.65;
+}
+
+.chapter-sources summary { color: var(--ink); font-weight: 700; cursor: pointer; }
+.chapter-sources ul { margin: 8px 0 0; padding-left: 18px; }
+.chapter-sources li { margin-bottom: 9px; }
+.chapter-sources a { color: var(--accent); overflow-wrap: anywhere; }
+
+.editorial-note {
+  padding: 22px;
+  background: #f4f1ea;
+  border: 1px solid var(--line);
+}
+
+.editorial-note p:last-child { margin-bottom: 0; }
+
+footer {
+  padding: 28px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .book-cover { min-height: 72vh; }
+  .book-tools { padding-inline: 14px; }
+  .book-tools a, .book-tools button { max-width: 48%; line-height: 1.4; }
+  .chapter { min-height: auto; padding: 52px 0; }
+}
+
+@media print {
+  @page { size: A5; margin: 18mm; }
+  body { background: #fff; }
+  .book-tools { display: none; }
+  .book-cover, main, footer { width: 100%; }
+  .book-cover { min-height: 170mm; page-break-after: always; border: 0; }
+  main { padding: 0; }
+  .preface { page-break-after: always; }
+  .chapter { min-height: 160mm; page-break-after: always; border: 0; }
+  .chapter-sources { display: block; }
+  .chapter-sources > summary { display: none; }
+  .editorial-note { page-break-before: always; }
+}

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f8faf7">
+    <meta name="description" content="ธรรมะสั้น ๆ สำหรับอ่านและนำไปใช้ในชีวิตประจำวัน">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="ธรรมะวันนี้">
+    <title>ธรรมะวันนี้ | Dhamma Today</title>
+    <link rel="manifest" href="./manifest.webmanifest?v=20260619-14">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png">
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+    <link rel="stylesheet" href="./styles.css?v=20260619-14">
+  </head>
+  <body>
+    <div class="app-frame">
+      <header class="hero" aria-label="ธรรมะวันนี้">
+        <img src="./assets/river-morning.jpg?v=20260618-2" alt="แม่น้ำและภูเขาในหมอกยามเช้า">
+        <div class="hero-topline">
+          <a class="brand" href="#today" aria-label="ธรรมะวันนี้ Dhamma Today">
+            <span class="brand-icon"><img src="./assets/crane-monkey-mark.png?v=20260619-1" alt=""></span>
+            <span>
+              <strong>ธรรมะวันนี้</strong>
+              <small>Dhamma Today</small>
+            </span>
+          </a>
+          <button class="icon-button light" id="aboutButton" type="button" aria-label="เกี่ยวกับแอป" title="เกี่ยวกับแอป">
+            <i data-lucide="info" aria-hidden="true"></i>
+          </button>
+        </div>
+        <p class="hero-date" id="todayDate"></p>
+      </header>
+
+      <main id="today">
+        <section class="reading-view" id="readingView" aria-labelledby="dailyHeading">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">อ่านช้า ๆ ทีละข้อ</p>
+              <h1 id="dailyHeading">ธรรมะสำหรับวันนี้</h1>
+            </div>
+            <button class="icon-button" id="shuffleButton" type="button" aria-label="สุ่มธรรมะชุดใหม่" title="สุ่มธรรมะชุดใหม่">
+              <i data-lucide="refresh-cw" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <div class="teaching-list" id="teachingList" aria-live="polite"></div>
+        </section>
+
+        <section class="saved-view" id="savedView" aria-labelledby="savedHeading" hidden>
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">เก็บไว้อ่านซ้ำ</p>
+              <h1 id="savedHeading">ธรรมะที่บันทึกไว้</h1>
+            </div>
+          </div>
+          <div class="teaching-list saved-list" id="savedList"></div>
+          <div class="empty-state" id="emptySaved" hidden>
+            <i data-lucide="bookmark" aria-hidden="true"></i>
+            <p>ยังไม่มีข้อความที่บันทึกไว้</p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="app-credit">เรียบเรียงหลักธรรมและคำสอน จากครูอาจารย์ โดย นกกระยางขาว</footer>
+
+      <nav class="bottom-nav" aria-label="เมนูหลัก">
+        <button class="nav-button active" type="button" data-view="today" aria-current="page">
+          <i data-lucide="leaf" aria-hidden="true"></i>
+          <span>วันนี้</span>
+        </button>
+        <button class="nav-button" type="button" data-view="saved">
+          <i data-lucide="bookmark" aria-hidden="true"></i>
+          <span>ที่บันทึก</span>
+        </button>
+      </nav>
+    </div>
+
+    <dialog class="about-dialog" id="aboutDialog">
+      <form method="dialog">
+        <div class="dialog-heading">
+          <div>
+            <p class="eyebrow">เกี่ยวกับแอป</p>
+            <h2>ธรรมะวันนี้</h2>
+          </div>
+          <button class="icon-button" value="close" aria-label="ปิด" title="ปิด">
+            <i data-lucide="x" aria-hidden="true"></i>
+          </button>
+        </div>
+        <p>ข้อธรรมสั้น ๆ สำหรับใช้เตือนใจในชีวิตประจำวัน โดยเรียบเรียงจากหลักพระพุทธศาสนาและคำสอนที่ตรวจสอบชื่อผู้สอนได้</p>
+        <p class="dialog-note">ชื่อครูอาจารย์แสดงเฉพาะข้อความที่มีต้นฉบับรองรับ ข้อความเรียบเรียงจะระบุไว้ชัดเจนและไม่อ้างเป็นคำกล่าวตรง การระบุแหล่งอ้างอิงช่วยให้ตรวจสอบย้อนหลังได้ แต่ไม่ใช่การรับรองสิทธิ์เผยแพร่หรือคำปรึกษาทางกฎหมาย</p>
+        <a class="book-link" href="./books/dhamma-pocket-book.html">อ่านธรรมะวันนี้ ฉบับพกพา</a>
+      </form>
+    </dialog>
+
+    <p class="toast" id="toast" role="status" aria-live="polite" hidden></p>
+
+    <script src="./assets/lucide.min.js?v=20260618-2"></script>
+    <script src="./content/dhamma-library.js?v=20260619-14"></script>
+    <script src="./app.js?v=20260619-14"></script>
+  </body>
+</html>
