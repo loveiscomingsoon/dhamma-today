@@ -230,7 +230,7 @@ refreshIcons();
 
 if ("serviceWorker" in navigator && location.protocol !== "file:") {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./service-worker.js?v=20260620-20").catch(() => {
+    navigator.serviceWorker.register("./service-worker.js?v=20260620-21").catch(() => {
       // The app remains fully usable online if service-worker registration is unavailable.
     });
   });
