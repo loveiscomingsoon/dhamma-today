@@ -97,13 +97,13 @@ button {
 .reader-brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-align: left;
 }
 
 .reader-brand img {
-  width: 46px;
-  height: 46px;
+  width: 62px;
+  height: 62px;
   object-fit: contain;
 }
 
@@ -160,8 +160,8 @@ button {
   transform-origin: left center;
   transition: transform 240ms ease, opacity 240ms ease;
   outline: none;
-  overflow-wrap: anywhere;
-  word-break: break-word;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .book-page > * {
@@ -223,8 +223,8 @@ button {
 }
 
 .cover-mark {
-  width: 112px;
-  height: 112px;
+  width: 140px;
+  height: 140px;
   object-fit: contain;
   margin: 0 auto 22px;
 }
@@ -268,9 +268,9 @@ button {
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1.38;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-  line-break: anywhere;
+  overflow-wrap: break-word;
+  word-break: normal;
+  line-break: auto;
 }
 
 .preface h2,
@@ -287,9 +287,9 @@ button {
   color: #24342d;
   font-size: clamp(1.08rem, 3vw, 1.34rem);
   line-height: 1.95;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-  line-break: anywhere;
+  overflow-wrap: break-word;
+  word-break: normal;
+  line-break: auto;
 }
 
 .attribution {
@@ -317,9 +317,9 @@ button {
   color: #25342d;
   font-size: 1rem;
   font-weight: 500;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-  line-break: anywhere;
+  overflow-wrap: break-word;
+  word-break: normal;
+  line-break: auto;
 }
 
 .source-panel {
@@ -452,8 +452,8 @@ button {
   }
 
   .reader-brand img {
-    width: 42px;
-    height: 42px;
+    width: 60px;
+    height: 60px;
   }
 
   .book-stage {
@@ -472,22 +472,32 @@ button {
     width: 100%;
     max-width: 100%;
     min-height: min(66vh, 650px);
-    padding: 34px 26px 54px;
+    padding: 34px 22px 54px;
     border-radius: 8px 18px 18px 8px;
   }
 
   .teaching-page h2 {
-    font-size: clamp(1.24rem, 6vw, 1.62rem);
-    word-break: break-all;
+    font-size: clamp(1.2rem, 5.6vw, 1.5rem);
+    line-height: 1.5;
+    word-break: normal;
+    overflow-wrap: break-word;
   }
 
   .teaching-text {
-    font-size: 0.98rem;
-    word-break: break-all;
+    font-size: 0.94rem;
+    line-height: 1.9;
+    word-break: normal;
+    overflow-wrap: break-word;
   }
 
   .practice strong {
-    word-break: break-all;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .cover-mark {
+    width: 126px;
+    height: 126px;
   }
 
   .turn-button {

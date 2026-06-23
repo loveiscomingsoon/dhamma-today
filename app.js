@@ -61,6 +61,24 @@ function showToast(message) {
   }, 2600);
 }
 
+function escapeHtml(value = "") {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function thaiText(value = "") {
+  const raw = String(value);
+  if (typeof Intl !== "undefined" && Intl.Segmenter) {
+    const segmenter = new Intl.Segmenter("th", { granularity: "word" });
+    return Array.from(segmenter.segment(raw), (part) => escapeHtml(part.segment)).join("<wbr>");
+  }
+  return escapeHtml(raw);
+}
+
 function shareUrl(id) {
   const url = new URL(window.location.href);
   url.search = "";
@@ -109,24 +127,24 @@ function sourceTemplate(source) {
   if (source.type === "video") {
     return `
       <li class="source-entry">
-        <strong>วิดีโอ: ${source.title}</strong>
-        <span>ช่อง ${source.channel} · เวลา ${source.timecode}</span>
-        <span>${source.recorded}</span>
-        <span>${source.relation}</span>
-        <a href="${source.url}" target="_blank" rel="noopener noreferrer">เปิดคลิปต้นฉบับ</a>
+        <strong>วิดีโอ: ${escapeHtml(source.title)}</strong>
+        <span>ช่อง ${escapeHtml(source.channel)} · เวลา ${escapeHtml(source.timecode)}</span>
+        <span>${escapeHtml(source.recorded)}</span>
+        <span>${escapeHtml(source.relation)}</span>
+        <a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">เปิดคลิปต้นฉบับ</a>
       </li>
     `;
   }
 
   return `
     <li class="source-entry">
-      <strong>หนังสือ: ${source.title}</strong>
-      <span>${source.author}</span>
-      <span>${source.edition} · ISBN ${source.isbn}</span>
-      <span>หน้าหนังสือ ${source.printedPages} · หน้าไฟล์ PDF ${source.pdfPages}</span>
-      <span>หัวข้อ: ${source.section}</span>
-      <span>ตำแหน่ง: ${source.passage}</span>
-      <span>${source.relation}</span>
+      <strong>หนังสือ: ${escapeHtml(source.title)}</strong>
+      <span>${escapeHtml(source.author)}</span>
+      <span>${escapeHtml(source.edition)} · ISBN ${escapeHtml(source.isbn)}</span>
+      <span>หน้าหนังสือ ${escapeHtml(source.printedPages)} · หน้าไฟล์ PDF ${escapeHtml(source.pdfPages)}</span>
+      <span>หัวข้อ: ${escapeHtml(source.section)}</span>
+      <span>ตำแหน่ง: ${escapeHtml(source.passage)}</span>
+      <span>${escapeHtml(source.relation)}</span>
     </li>
   `;
 }
@@ -136,17 +154,17 @@ function teachingTemplate(item, index, savedView = false) {
     <article class="teaching-item" data-teaching="${item.id}" data-tone="${item.tone}">
       <span class="teaching-number" aria-hidden="true">${index + 1}</span>
       <div class="teaching-copy">
-        <p class="teaching-topic"><i data-lucide="tag" aria-hidden="true"></i>${item.topic}</p>
-        <h2>${item.title}</h2>
-        <p class="teaching-body">${item.body}</p>
-        <p class="attribution"><span>${item.attribution}</span> ${item.author}</p>
+        <p class="teaching-topic"><i data-lucide="tag" aria-hidden="true"></i>${thaiText(item.topic)}</p>
+        <h2>${thaiText(item.title)}</h2>
+        <p class="teaching-body">${thaiText(item.body)}</p>
+        <p class="attribution"><span>${thaiText(item.attribution)}</span> ${thaiText(item.author)}</p>
         <details class="practice-detail">
           <summary class="practice-toggle">ธรรมในใจ</summary>
-          <p class="practice-guidance">${item.practice}</p>
+          <p class="practice-guidance">${thaiText(item.practice)}</p>
         </details>
         <details class="source-detail">
           <summary>แหล่งอ้างอิง</summary>
-          <p class="source-status">${item.sourceStatus}</p>
+          <p class="source-status">${escapeHtml(item.sourceStatus)}</p>
           <ul class="source-list">${item.sources.map(sourceTemplate).join("")}</ul>
         </details>
       </div>
@@ -230,7 +248,7 @@ refreshIcons();
 
 if ("serviceWorker" in navigator && location.protocol !== "file:") {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./service-worker.js?v=20260620-22").catch(() => {
+    navigator.serviceWorker.register("./service-worker.js?v=20260623-3").catch(() => {
       // The app remains fully usable online if service-worker registration is unavailable.
     });
   });

@@ -23,11 +23,11 @@ function escapeHtml(value = "") {
     .replaceAll("'", "&#039;");
 }
 
-function readableThai(value = "") {
+function thaiText(value = "") {
   const raw = String(value);
   if (typeof Intl !== "undefined" && Intl.Segmenter) {
     const segmenter = new Intl.Segmenter("th", { granularity: "word" });
-    return Array.from(segmenter.segment(raw), (part) => escapeHtml(part.segment)).join("\u200b");
+    return Array.from(segmenter.segment(raw), (part) => escapeHtml(part.segment)).join("<wbr>");
   }
   return escapeHtml(raw);
 }
@@ -73,13 +73,13 @@ const pages = [
     label: `ข้อ ${index + 1}`,
     item,
     html: () => `
-      <p class="chapter-number">${pageNumber(index + 1)} · ${readableThai(item.topic)}</p>
-      <h2>${readableThai(item.title)}</h2>
-      <p class="teaching-text">${readableThai(item.body)}</p>
-      <p class="attribution">${readableThai(item.attribution)} · ${readableThai(item.author)}</p>
+      <p class="chapter-number">${pageNumber(index + 1)} · ${thaiText(item.topic)}</p>
+      <h2>${thaiText(item.title)}</h2>
+      <p class="teaching-text">${thaiText(item.body)}</p>
+      <p class="attribution">${thaiText(item.attribution)} · ${thaiText(item.author)}</p>
       <div class="practice">
         <p>ธรรมในใจ</p>
-        <strong>${readableThai(item.practice)}</strong>
+        <strong>${thaiText(item.practice)}</strong>
       </div>
       <div class="source-panel">
         <strong>แหล่งอ้างอิงภายใน</strong>

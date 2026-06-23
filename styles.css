@@ -82,16 +82,16 @@ summary:focus-visible {
   min-width: 0;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   color: #274536;
   text-decoration: none;
   text-shadow: 0 1px 12px rgba(255, 255, 255, 0.82);
 }
 
 .brand-icon {
-  width: 54px;
-  height: 54px;
-  flex: 0 0 54px;
+  width: 72px;
+  height: 72px;
+  flex: 0 0 72px;
   display: grid;
   place-items: center;
   background: rgba(255, 255, 255, 0.84);
@@ -100,8 +100,8 @@ summary:focus-visible {
 }
 
 .brand-icon img {
-  width: 48px;
-  height: 48px;
+  width: 66px;
+  height: 66px;
   display: block;
   object-fit: contain;
 }
@@ -112,7 +112,7 @@ summary:focus-visible {
 }
 
 .brand strong {
-  font-size: 1.08rem;
+  font-size: 1.18rem;
 }
 
 .brand small {
@@ -187,6 +187,9 @@ h1,
 h2,
 p {
   margin-top: 0;
+  overflow-wrap: break-word;
+  word-break: normal;
+  line-break: auto;
 }
 
 h1 {
@@ -252,6 +255,8 @@ h1 {
   font-size: clamp(1.28rem, 4vw, 1.52rem);
   line-height: 1.45;
   font-weight: 800;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .teaching-topic {
@@ -275,6 +280,8 @@ h1 {
   color: #33433b;
   font-size: 1.08rem;
   line-height: 1.78;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .attribution {
@@ -357,6 +364,8 @@ h1 {
   background: transparent;
   font-size: 0.9rem;
   line-height: 1.65;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .source-detail {
