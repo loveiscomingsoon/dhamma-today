@@ -4,53 +4,68 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f7f2e9">
-    <meta name="description" content="รวมข้อธรรมสั้น ๆ จากธรรมะวันนี้ สำหรับอ่านช้า ๆ และนำไปภาวนาในชีวิตประจำวัน">
+    <meta name="description" content="ธรรมะพกพา เล่ม 1 หนังสือธรรมะออนไลน์แบบเปิดทีละหน้า จากชุดธรรมะวันนี้">
     <meta name="author" content="นกกระยางขาว">
     <meta name="copyright" content="งานเรียบเรียง การคัดเลือก การจัดระบบ และการออกแบบ © 2026 นกกระยางขาว">
-    <title>ธรรมะพกพา เล่ม 1</title>
-    <link rel="stylesheet" href="./pocket-book.css?v=20260620-22">
+    <title>ธรรมะพกพา เล่ม 1 | Online Pocket Book</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+    <link rel="stylesheet" href="./pocket-book.css?v=20260623-2">
   </head>
   <body>
-    <header class="book-cover">
-      <div class="cover-inner">
-        <img src="../assets/crane-monkey-mark.png" alt="">
-        <p class="kicker">ธรรมะสำหรับชีวิตประจำวัน</p>
-        <h1>ธรรมะวันนี้</h1>
-        <p class="subtitle">ธรรมะพกพา เล่ม 1</p>
-        <p class="cover-note">อ่านช้า ๆ วันละหนึ่งข้อ<br>แล้วลองนำธรรมกลับมาดูใจ</p>
-      </div>
-    </header>
+    <div class="reader-shell">
+      <header class="reader-header">
+        <a class="back-link" href="../index.html" aria-label="กลับสู่แอปธรรมะวันนี้">
+          <span aria-hidden="true">‹</span>
+          ธรรมะวันนี้
+        </a>
+        <div class="reader-brand">
+          <img src="../assets/crane-monkey-mark.png" alt="">
+          <div>
+            <strong>ธรรมะพกพา</strong>
+            <small>Pocket Dhamma Book</small>
+          </div>
+        </div>
+        <button class="text-button" id="printBook" type="button">บันทึก PDF</button>
+      </header>
 
-    <nav class="book-tools" aria-label="เครื่องมือหนังสือ">
-      <a href="../index.html">กลับสู่ธรรมะวันนี้</a>
-      <button id="printBook" type="button">พิมพ์หรือบันทึก PDF</button>
-    </nav>
+      <main class="reader-main" aria-live="polite">
+        <section class="book-stage" aria-label="หนังสือธรรมะพกพาแบบออนไลน์">
+          <button class="turn-button previous" id="prevPage" type="button" aria-label="หน้าก่อนหน้า">
+            <span aria-hidden="true">‹</span>
+          </button>
 
-    <main>
-      <section class="preface">
-        <p class="section-label">คำนำ</p>
-        <h2>ธรรมะเล็ก ๆ ที่กลับมาอ่านได้ทุกวัน</h2>
-        <p>หนังสือเล่มเล็กนี้รวบรวมข้อธรรม 99 ข้อจากแอปธรรมะวันนี้ เพื่อเป็นแนวทางพิจารณาใจและทดลองปฏิบัติในชีวิตประจำวัน ข้อความทั้งหมดเป็นการเรียบเรียงสรุปความ ไม่ใช่คำกล่าวตรง และมีทะเบียนหน้า PDF กับวรรคจากหนังสือต้นฉบับสำหรับตรวจสอบย้อนหลัง</p>
-        <p id="bookCount" class="book-count"></p>
-      </section>
+          <article class="book-page" id="bookPage" tabindex="-1"></article>
 
-      <section class="chapters" id="chapters" aria-label="ข้อความธรรมทั้งหมด"></section>
+          <button class="turn-button next" id="nextPage" type="button" aria-label="หน้าถัดไป">
+            <span aria-hidden="true">›</span>
+          </button>
+        </section>
 
-      <section class="editorial-note">
-        <p class="section-label">หมายเหตุบรรณาธิการ</p>
-        <p>ข้อธรรมในเล่มเป็นฉบับเรียบเรียงสำหรับอ่านประจำวัน ควรตรวจทานทะเบียนอ้างอิงกับต้นฉบับอีกครั้งก่อนนำไปจัดพิมพ์หรือเผยแพร่เป็นหนังสือฉบับสมบูรณ์</p>
-      </section>
-    </main>
+        <section class="reader-controls" aria-label="ควบคุมการอ่าน">
+          <div class="page-status">
+            <span id="pageLabel">หน้า 1</span>
+            <small id="pageHint">ใช้ปุ่มซ้าย/ขวาเพื่อเปิดหน้า</small>
+          </div>
+          <input id="pageSlider" type="range" min="1" value="1" aria-label="เลือกหน้าหนังสือ">
+          <div class="quick-actions">
+            <button class="pill-button" id="coverPage" type="button">ปก</button>
+            <button class="pill-button" id="randomPage" type="button">สุ่มข้อธรรม</button>
+            <button class="pill-button" id="sourcesToggle" type="button" aria-pressed="false">แหล่งอ้างอิง</button>
+          </div>
+        </section>
+      </main>
 
-    <footer>
-      <p>เรียบเรียงหลักธรรมและคำสอน จากครูอาจารย์ โดย นกกระยางขาว</p>
-      <p>งานเรียบเรียง การคัดเลือก และการจัดระบบ &copy; 2026 นกกระยางขาว</p>
-      <p>สิทธิในคำสอนและต้นฉบับเป็นของผู้สร้างสรรค์หรือผู้ทรงสิทธิเดิม</p>
-      <a href="mailto:loveiscomingsoon@gmail.com">ติดต่อหรือแจ้งการนำผลงานไปใช้</a>
-      <span aria-hidden="true"> · </span><a href="tel:0992966166">โทร 099-296-6166</a>
-    </footer>
+      <footer class="reader-footer">
+        <p>เรียบเรียงหลักธรรมและคำสอน จากครูอาจารย์ โดย นกกระยางขาว</p>
+        <p>งานเรียบเรียง การคัดเลือก การจัดระบบ และการออกแบบ &copy; 2026 นกกระยางขาว</p>
+        <a href="mailto:loveiscomingsoon@gmail.com">ติดต่อหรือแจ้งการนำผลงานไปใช้</a>
+        <span aria-hidden="true"> · </span><a href="tel:0992966166">โทร 099-296-6166</a>
+      </footer>
+    </div>
+
+    <section class="print-book" id="printBookContent" aria-label="ฉบับพิมพ์"></section>
 
     <script src="../content/dhamma-library.js?v=20260620-22"></script>
-    <script src="./pocket-book.js?v=20260620-22"></script>
+    <script src="./pocket-book.js?v=20260623-2"></script>
   </body>
 </html>
