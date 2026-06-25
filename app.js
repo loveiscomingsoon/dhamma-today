@@ -12,12 +12,13 @@ let shuffleOffset = 0;
 let currentView = "today";
 let toastTimer;
 
+const HERO_COVER = {
+  src: "./assets/daily-art/dhamma-today-cover-single.png?v=20260625-1",
+  title: "ให้ธรรมะเป็นเรื่องใกล้ใจ",
+  alt: "ปกธรรมะวันนี้ ภาพเด็กน้อยนั่งภาวนาข้างแมว"
+};
+
 const DAILY_ARTS = [
-  {
-    src: "./assets/daily-art/daily-cover-01.jpg?v=20260625-1",
-    title: "ให้ธรรมะเป็นเรื่องใกล้ใจ",
-    alt: "ปกธรรมะวันนี้ ภาพเด็กน้อยนั่งภาวนาข้างแมวและหนังสือ"
-  },
   {
     src: "./assets/daily-art/daily-illustration-01.jpg?v=20260625-1",
     title: "อยู่กับปัจจุบันอย่างอ่อนโยน",
@@ -70,8 +71,6 @@ const DAILY_ARTS = [
   }
 ];
 
-const HERO_COVER = DAILY_ARTS[0];
-
 function getSharedId() {
   const id = new URLSearchParams(window.location.search).get("dhamma");
   return teachings.some((item) => item.id === id) ? id : null;
@@ -104,7 +103,7 @@ function getDailyArt() {
 }
 
 function getTeachingArt(item, index) {
-  const illustrations = DAILY_ARTS.slice(1);
+  const illustrations = DAILY_ARTS;
   const seed = (item.dayIndex || 0) + index + shuffleOffset;
   return illustrations[seed % illustrations.length];
 }

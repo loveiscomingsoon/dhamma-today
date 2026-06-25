@@ -276,58 +276,16 @@ button {
 
 .cover-art {
   display: block;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
+  height: min(42vh, 390px);
   max-height: min(42vh, 390px);
+  margin: 0 auto;
   object-fit: contain;
   border-radius: 18px;
   border: 1px solid rgba(234, 217, 196, 0.88);
   background: #fffaf3;
   box-shadow: 0 18px 42px rgba(124, 83, 47, 0.12);
-}
-
-.cover-cat {
-  pointer-events: none;
-  user-select: none;
-  position: absolute;
-  right: 34%;
-  bottom: 28%;
-  width: clamp(34px, 10vw, 48px);
-  aspect-ratio: 99 / 170;
-  filter: drop-shadow(0 8px 14px rgba(106, 75, 45, 0.12));
-  display: block;
-}
-
-.cover-cat img {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  inset: 0;
-  display: block;
-  object-fit: contain;
-}
-
-.cover-cat-body {
-  z-index: 1;
-  clip-path: inset(37% 0 0 0);
-}
-
-.cover-cat-head {
-  z-index: 2;
-  clip-path: inset(0 0 45% 0);
-  transform-origin: 50% 38%;
-  animation: cat-head-tilt 1.65s ease-in-out infinite;
-  will-change: transform;
-}
-
-@keyframes cat-head-tilt {
-  0%, 100% { transform: rotate(-3deg); }
-  50% { transform: rotate(3deg); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .cover-cat-head {
-    animation: none;
-  }
 }
 
 .cover-rights {
@@ -637,14 +595,9 @@ button {
   }
 
   .cover-art {
+    height: 36vh;
     max-height: 36vh;
     border-radius: 15px;
-  }
-
-  .cover-cat {
-    right: 34%;
-    bottom: 28%;
-    width: clamp(32px, 11vw, 44px);
   }
 
   .book-page.cover h1 {

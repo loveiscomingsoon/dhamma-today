@@ -81,53 +81,6 @@ summary:focus-visible {
   box-shadow: 0 24px 70px rgba(98, 73, 48, 0.14);
 }
 
-.cat-wag {
-  pointer-events: none;
-  user-select: none;
-  display: block;
-  aspect-ratio: 180 / 206;
-}
-
-.hero-cat {
-  position: absolute;
-  width: clamp(76px, 18vw, 126px);
-  right: clamp(62px, 19vw, 146px);
-  top: clamp(312px, 57vh, 516px);
-  z-index: 2;
-  filter: drop-shadow(0 10px 16px rgba(106, 75, 45, 0.14));
-}
-
-.cat-wag img {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  inset: 0;
-  display: block;
-  object-fit: contain;
-}
-
-.cat-body {
-  z-index: 1;
-}
-
-.cat-tail {
-  z-index: 2;
-  transform-origin: 52% 74%;
-  animation: tail-wag 1.45s ease-in-out infinite;
-  will-change: transform;
-}
-
-@keyframes tail-wag {
-  0%, 100% { transform: rotate(-7deg); }
-  50% { transform: rotate(9deg); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .cat-tail {
-    animation: none;
-  }
-}
-
 .hero-topline {
   position: absolute;
   inset: 28px 28px auto;
