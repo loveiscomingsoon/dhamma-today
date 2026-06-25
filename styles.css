@@ -81,6 +81,35 @@ summary:focus-visible {
   box-shadow: 0 24px 70px rgba(98, 73, 48, 0.14);
 }
 
+.moving-cat {
+  pointer-events: none;
+  user-select: none;
+  transform-origin: center bottom;
+  animation: cat-walk 3.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+.hero-cat {
+  position: absolute;
+  width: clamp(76px, 18vw, 126px);
+  right: clamp(62px, 19vw, 146px);
+  top: clamp(312px, 57vh, 516px);
+  z-index: 2;
+  filter: drop-shadow(0 10px 16px rgba(106, 75, 45, 0.14));
+}
+
+@keyframes cat-walk {
+  0%, 100% { transform: translate3d(-5px, 0, 0) rotate(-1.5deg); }
+  45% { transform: translate3d(8px, -1px, 0) rotate(1.3deg); }
+  62% { transform: translate3d(5px, 0, 0) rotate(0.4deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .moving-cat {
+    animation: none;
+  }
+}
+
 .hero-topline {
   position: absolute;
   inset: 28px 28px auto;

@@ -285,6 +285,34 @@ button {
   box-shadow: 0 18px 42px rgba(124, 83, 47, 0.12);
 }
 
+.moving-cat {
+  pointer-events: none;
+  user-select: none;
+  transform-origin: center bottom;
+  animation: cat-walk 3.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+.cover-cat {
+  position: absolute;
+  right: 10%;
+  bottom: 22%;
+  width: clamp(54px, 18vw, 86px);
+  filter: drop-shadow(0 8px 14px rgba(106, 75, 45, 0.12));
+}
+
+@keyframes cat-walk {
+  0%, 100% { transform: translate3d(-4px, 0, 0) rotate(-1.5deg); }
+  45% { transform: translate3d(7px, -1px, 0) rotate(1.2deg); }
+  62% { transform: translate3d(5px, 0, 0) rotate(0.4deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .moving-cat {
+    animation: none;
+  }
+}
+
 .cover-rights {
   position: absolute;
   left: 12px;
@@ -594,6 +622,12 @@ button {
   .cover-art {
     max-height: 36vh;
     border-radius: 15px;
+  }
+
+  .cover-cat {
+    right: 8%;
+    bottom: 21%;
+    width: clamp(48px, 20vw, 72px);
   }
 
   .book-page.cover h1 {

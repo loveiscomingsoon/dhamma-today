@@ -70,6 +70,7 @@ const pages = [
     html: () => `
       <div class="cover-art-wrap">
         <img class="cover-art" src="${COVER_ART}" alt="ภาพปกธรรมะวันนี้">
+        <img class="moving-cat cover-cat" src="../assets/daily-art/cover-cat-sticker.png?v=20260625-1" alt="" aria-hidden="true">
         <span class="cover-rights">ลิขสิทธิ์โดย นกกระยางขาว</span>
       </div>
       <img class="cover-mark" src="../assets/crane-monkey-mark.png" alt="">
