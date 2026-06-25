@@ -1,4 +1,4 @@
-const CACHE_NAME = "dhamma-today-v25-daily-art-2";
+const CACHE_NAME = "dhamma-today-v25-themed-qr";
 const APP_ASSETS = [
   "./",
   "./index.html",
@@ -23,8 +23,8 @@ const APP_ASSETS = [
   "./assets/daily-art/daily-illustration-10.jpg?v=20260625-1",
   "./assets/lucide.min.js?v=20260618-2",
   "./assets/crane-monkey-mark.png?v=20260619-1",
-  "./assets/dhamma-today-qr.png",
-  "./assets/dhamma-today-qr-poster.png",
+  "./assets/dhamma-today-qr.png?v=20260625-3",
+  "./assets/dhamma-today-qr-poster.png?v=20260625-3",
   "./assets/app-icon-192.png",
   "./assets/app-icon-512.png",
   "./assets/apple-touch-icon.png",
