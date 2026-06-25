@@ -14,6 +14,25 @@ const printBookContent = document.querySelector("#printBookContent");
 let pageIndex = 0;
 let showSources = false;
 
+const BOOK_ARTS = [
+  "../assets/daily-art/daily-illustration-01.jpg?v=20260625-1",
+  "../assets/daily-art/daily-illustration-02.jpg?v=20260625-1",
+  "../assets/daily-art/daily-illustration-03.jpg?v=20260625-1",
+  "../assets/daily-art/daily-illustration-04.jpg?v=20260625-1",
+  "../assets/daily-art/daily-illustration-05.jpg?v=20260625-1",
+  "../assets/daily-art/daily-illustration-06.jpg?v=20260625-1",
+  "../assets/daily-art/daily-illustration-07.jpg?v=20260625-1",
+  "../assets/daily-art/daily-illustration-08.jpg?v=20260625-1",
+  "../assets/daily-art/daily-illustration-09.jpg?v=20260625-1",
+  "../assets/daily-art/daily-illustration-10.jpg?v=20260625-1"
+];
+
+const COVER_ART = "../assets/daily-art/daily-cover-01.jpg?v=20260625-1";
+
+function bookArtForPage(index) {
+  return BOOK_ARTS[index % BOOK_ARTS.length];
+}
+
 function escapeHtml(value = "") {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -49,10 +68,14 @@ const pages = [
     kind: "cover",
     label: "ปก",
     html: () => `
+      <div class="cover-art-wrap">
+        <img class="cover-art" src="${COVER_ART}" alt="ภาพปกธรรมะวันนี้">
+        <span class="cover-rights">ลิขสิทธิ์โดย นกกระยางขาว</span>
+      </div>
       <img class="cover-mark" src="../assets/crane-monkey-mark.png" alt="">
       <p class="page-kicker">ธรรมะสำหรับชีวิตประจำวัน</p>
-      <h1>ธรรมะวันนี้</h1>
-      <p class="subtitle">ธรรมะพกพา เล่ม 1</p>
+      <h1>ธรรมะพกพา</h1>
+      <p class="subtitle">เล่ม 1 · Dhamma Today</p>
       <p class="cover-note">อ่านช้า ๆ ทีละหน้า<br>แล้วลองนำธรรมกลับมาดูใจ</p>
       <span class="page-foot">Online Pocket Book</span>
     `
@@ -104,6 +127,7 @@ const pages = [
     kind: "back-cover",
     label: "ปิดเล่ม",
     html: () => `
+      <img class="back-cover-art" src="../assets/daily-art/daily-illustration-03.jpg?v=20260625-1" alt="ภาพประกอบธรรมะพกพา">
       <img class="cover-mark" src="../assets/crane-monkey-mark.png" alt="">
       <p class="page-kicker">จบเล่มที่ 1</p>
       <h2>กลับมาเปิดอ่านได้ทุกวัน</h2>
@@ -130,6 +154,8 @@ function writeHash() {
 function render(direction = "next") {
   const page = pages[pageIndex];
   bookPage.className = `book-page ${page.kind}${showSources ? " show-sources" : ""}`;
+  bookPage.style.setProperty("--page-art", `url("${bookArtForPage(pageIndex)}")`);
+  bookPage.style.setProperty("--cover-art", `url("${COVER_ART}")`);
   bookPage.innerHTML = page.html();
   pageSlider.max = String(pages.length);
   pageSlider.value = String(pageIndex + 1);
@@ -158,10 +184,11 @@ function renderPrintBook() {
   printBookContent.innerHTML = `
     <article class="print-page print-cover">
       <div>
+        <img class="print-cover-art" src="${COVER_ART}" alt="">
         <img class="cover-mark" src="../assets/crane-monkey-mark.png" alt="">
         <p>ธรรมะสำหรับชีวิตประจำวัน</p>
-        <h1>ธรรมะวันนี้</h1>
-        <p>ธรรมะพกพา เล่ม 1</p>
+        <h1>ธรรมะพกพา</h1>
+        <p>เล่ม 1 · Dhamma Today</p>
       </div>
     </article>
     <article class="print-page">

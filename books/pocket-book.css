@@ -1,15 +1,18 @@
 :root {
   color-scheme: light;
-  --ink: #25342d;
-  --muted: #68756c;
+  --ink: #463829;
+  --muted: #7a705e;
   --paper: #fffdf8;
-  --paper-deep: #f5eadc;
-  --warm: #ead6bf;
-  --line: #d8ccbc;
-  --accent: #835c3d;
-  --accent-deep: #60432e;
-  --green: #667869;
-  --shadow: 0 26px 70px rgba(69, 49, 30, 0.18);
+  --paper-deep: #faefe2;
+  --warm: #f2d8ca;
+  --line: #ead9c4;
+  --accent: #9c6b4d;
+  --accent-deep: #654533;
+  --green: #78906e;
+  --sage: #dce7cf;
+  --petal: #f4c8bd;
+  --sky: #dbeef0;
+  --shadow: 0 26px 70px rgba(108, 75, 45, 0.16);
 }
 
 * { box-sizing: border-box; }
@@ -22,8 +25,10 @@ body {
   overflow-x: hidden;
   color: var(--ink);
   background:
-    linear-gradient(135deg, rgba(255, 253, 248, 0.88), rgba(240, 230, 214, 0.8)),
-    url("../assets/river-morning.jpg") center/cover fixed;
+    radial-gradient(circle at 12% 14%, rgba(244, 200, 189, 0.32), transparent 30%),
+    radial-gradient(circle at 88% 10%, rgba(219, 238, 240, 0.48), transparent 31%),
+    linear-gradient(135deg, rgba(255, 253, 248, 0.92), rgba(250, 239, 226, 0.86)),
+    url("../assets/daily-art/daily-illustration-04.jpg?v=20260625-1") center/460px auto fixed;
   font-family: "Thonburi", "Noto Sans Thai", Tahoma, sans-serif;
   line-height: 1.75;
 }
@@ -41,6 +46,8 @@ button {
 }
 
 .reader-shell {
+  width: auto;
+  max-width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -56,9 +63,9 @@ button {
   gap: 14px;
   margin-inline: auto;
   padding: 12px 16px;
-  background: rgba(255, 253, 248, 0.82);
-  border: 1px solid rgba(216, 204, 188, 0.72);
-  border-radius: 18px;
+  background: rgba(255, 253, 248, 0.88);
+  border: 1px solid rgba(234, 217, 196, 0.86);
+  border-radius: 20px;
   backdrop-filter: blur(18px);
   box-shadow: 0 12px 34px rgba(68, 51, 32, 0.08);
 }
@@ -72,7 +79,7 @@ button {
   min-height: 40px;
   border-radius: 999px;
   border: 1px solid rgba(131, 92, 61, 0.26);
-  background: rgba(255, 253, 248, 0.72);
+  background: rgba(255, 253, 248, 0.76);
   color: var(--accent-deep);
   text-decoration: none;
   font-weight: 700;
@@ -98,6 +105,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 12px;
+  min-width: 0;
   text-align: left;
 }
 
@@ -152,9 +160,10 @@ button {
   padding: clamp(28px, 6vw, 74px);
   overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(196, 174, 148, 0.22), transparent 9%, transparent 92%, rgba(190, 166, 135, 0.16)),
+    linear-gradient(90deg, rgba(216, 183, 151, 0.24), transparent 9%, transparent 92%, rgba(216, 183, 151, 0.14)),
+    linear-gradient(135deg, rgba(255, 253, 248, 0.98), rgba(253, 246, 237, 0.94)),
     var(--paper);
-  border: 1px solid rgba(207, 193, 173, 0.9);
+  border: 1px solid rgba(231, 210, 185, 0.94);
   border-radius: 8px 20px 20px 8px;
   box-shadow: var(--shadow);
   transform-origin: left center;
@@ -162,9 +171,12 @@ button {
   outline: none;
   overflow-wrap: break-word;
   word-break: normal;
+  isolation: isolate;
 }
 
 .book-page > * {
+  position: relative;
+  z-index: 2;
   max-width: 100%;
 }
 
@@ -175,6 +187,23 @@ button {
   border: 1px solid rgba(216, 204, 188, 0.52);
   border-radius: 5px 15px 15px 5px;
   pointer-events: none;
+  z-index: 3;
+}
+
+.book-page.teaching-page::after,
+.book-page.preface::after,
+.book-page.plain-page::after {
+  content: "";
+  position: absolute;
+  right: clamp(18px, 5vw, 54px);
+  bottom: clamp(44px, 7vw, 76px);
+  width: min(36%, 220px);
+  aspect-ratio: 1 / 1.12;
+  background: var(--page-art) center/contain no-repeat;
+  opacity: 0.2;
+  pointer-events: none;
+  filter: saturate(0.95);
+  z-index: 1;
 }
 
 .book-page.turning-next {
@@ -194,7 +223,7 @@ button {
   place-items: center;
   border: 1px solid rgba(131, 92, 61, 0.18);
   border-radius: 999px;
-  background: rgba(255, 253, 248, 0.78);
+  background: rgba(255, 253, 248, 0.84);
   color: var(--accent-deep);
   box-shadow: 0 10px 30px rgba(68, 51, 32, 0.1);
 }
@@ -223,10 +252,10 @@ button {
 }
 
 .cover-mark {
-  width: 140px;
-  height: 140px;
+  width: 82px;
+  height: 82px;
   object-fit: contain;
-  margin: 0 auto 22px;
+  margin: 8px auto 12px;
 }
 
 .book-page.cover,
@@ -234,14 +263,44 @@ button {
   align-items: center;
   text-align: center;
   background:
-    linear-gradient(180deg, rgba(255, 253, 248, 0.95), rgba(244, 231, 212, 0.98)),
+    radial-gradient(circle at top, rgba(244, 200, 189, 0.24), transparent 32%),
+    linear-gradient(180deg, rgba(255, 253, 248, 0.98), rgba(250, 239, 226, 0.98)),
     var(--paper);
 }
 
+.cover-art-wrap {
+  position: relative;
+  width: min(78%, 360px);
+  margin: 0 auto 4px;
+}
+
+.cover-art {
+  display: block;
+  width: 100%;
+  max-height: min(42vh, 390px);
+  object-fit: contain;
+  border-radius: 18px;
+  border: 1px solid rgba(234, 217, 196, 0.88);
+  background: #fffaf3;
+  box-shadow: 0 18px 42px rgba(124, 83, 47, 0.12);
+}
+
+.cover-rights {
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 253, 248, 0.82);
+  color: #7a604b;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
 .book-page.cover h1 {
-  margin: 8px 0 0;
+  margin: 2px 0 0;
   font-family: "Thonburi", "Noto Serif Thai", serif;
-  font-size: clamp(2.7rem, 9vw, 5.6rem);
+  font-size: clamp(2.45rem, 8vw, 4.8rem);
   font-weight: 500;
   line-height: 1.15;
   letter-spacing: 0;
@@ -256,8 +315,16 @@ button {
 
 .cover-note {
   max-width: 340px;
-  margin: 52px auto 0;
+  margin: 18px auto 0;
   color: var(--muted);
+}
+
+.back-cover-art {
+  width: min(58%, 280px);
+  max-height: 230px;
+  object-fit: contain;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 14px 24px rgba(124, 83, 47, 0.1));
 }
 
 .preface h2,
@@ -284,7 +351,7 @@ button {
 
 .teaching-text {
   margin: 0;
-  color: #24342d;
+  color: #3f3529;
   font-size: clamp(1.08rem, 3vw, 1.34rem);
   line-height: 1.95;
   overflow-wrap: break-word;
@@ -301,8 +368,8 @@ button {
 .practice {
   margin-top: 30px;
   padding: 18px 20px;
-  background: #ead8c3;
-  border: 1px solid rgba(174, 135, 96, 0.28);
+  background: linear-gradient(135deg, rgba(244, 200, 189, 0.34), rgba(220, 231, 207, 0.46));
+  border: 1px solid rgba(174, 135, 96, 0.24);
   border-radius: 14px;
 }
 
@@ -314,7 +381,7 @@ button {
 }
 
 .practice strong {
-  color: #25342d;
+  color: #463829;
   font-size: 1rem;
   font-weight: 500;
   overflow-wrap: break-word;
@@ -360,9 +427,9 @@ button {
   align-items: center;
   gap: 16px;
   padding: 14px 16px;
-  background: rgba(255, 253, 248, 0.84);
-  border: 1px solid rgba(216, 204, 188, 0.72);
-  border-radius: 18px;
+  background: rgba(255, 253, 248, 0.88);
+  border: 1px solid rgba(234, 217, 196, 0.86);
+  border-radius: 20px;
   backdrop-filter: blur(18px);
   min-width: 0;
 }
@@ -418,19 +485,25 @@ button {
 .print-book { display: none; }
 
 @media (max-width: 760px) {
-  .reader-shell { padding: 10px; }
+  .reader-shell {
+    padding: 10px 18px 10px 10px;
+    overflow: hidden;
+  }
 
   .reader-header,
   .reader-main,
   .reader-footer {
-    width: calc(100vw - 20px);
-    max-width: calc(100vw - 20px);
+    width: calc(100% - 18px);
+    max-width: 100%;
+    align-self: stretch;
+    margin-inline: 0;
   }
 
   .reader-header {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     border-radius: 14px;
     min-width: 0;
+    padding: 12px;
   }
 
   .reader-brand {
@@ -442,13 +515,23 @@ button {
   .back-link {
     grid-column: 1;
     grid-row: 2;
+    justify-self: stretch;
+    width: 100%;
+    min-width: 0;
+    padding-inline: 10px;
+    font-size: 0.88rem;
   }
 
   .text-button {
     grid-column: 2;
     grid-row: 2;
-    max-width: 128px;
-    padding-inline: 12px;
+    justify-self: stretch;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    padding-inline: 10px;
+    font-size: 0.88rem;
+    white-space: nowrap;
   }
 
   .reader-brand img {
@@ -471,9 +554,13 @@ button {
     grid-row: 1;
     width: 100%;
     max-width: 100%;
-    min-height: min(66vh, 650px);
+    min-height: min(68vh, 690px);
     padding: 34px 22px 54px;
     border-radius: 8px 18px 18px 8px;
+  }
+
+  .book-page.cover {
+    padding-top: 22px;
   }
 
   .teaching-page h2 {
@@ -496,8 +583,30 @@ button {
   }
 
   .cover-mark {
-    width: 126px;
-    height: 126px;
+    width: 70px;
+    height: 70px;
+  }
+
+  .cover-art-wrap {
+    width: min(92%, 320px);
+  }
+
+  .cover-art {
+    max-height: 36vh;
+    border-radius: 15px;
+  }
+
+  .book-page.cover h1 {
+    font-size: clamp(2rem, 11vw, 3.05rem);
+  }
+
+  .book-page.teaching-page::after,
+  .book-page.preface::after,
+  .book-page.plain-page::after {
+    right: 14px;
+    bottom: 52px;
+    width: min(42%, 150px);
+    opacity: 0.16;
   }
 
   .turn-button {
@@ -516,15 +625,23 @@ button {
     max-width: 100%;
   }
 
+  .reader-controls > * {
+    min-width: 0;
+  }
+
   .quick-actions {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    width: 100%;
+    min-width: 0;
   }
 
   .pill-button {
+    width: 100%;
     min-width: 0;
-    padding-inline: 8px;
-    font-size: 0.82rem;
+    padding-inline: 6px;
+    font-size: 0.8rem;
     white-space: normal;
     line-height: 1.3;
   }
@@ -562,6 +679,16 @@ button {
     display: grid;
     place-items: center;
     text-align: center;
+  }
+
+  .print-cover-art {
+    width: 92mm;
+    max-height: 126mm;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 8mm;
+    border: 0.5pt solid #ead9c4;
+    border-radius: 8pt;
   }
 
   .print-page h1,
