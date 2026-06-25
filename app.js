@@ -12,6 +12,64 @@ let shuffleOffset = 0;
 let currentView = "today";
 let toastTimer;
 
+const DAILY_ARTS = [
+  {
+    src: "./assets/daily-art/daily-cover-01.jpg?v=20260625-1",
+    title: "ให้ธรรมะเป็นเรื่องใกล้ใจ",
+    alt: "ปกธรรมะวันนี้ ภาพเด็กน้อยนั่งภาวนาข้างแมวและหนังสือ"
+  },
+  {
+    src: "./assets/daily-art/daily-illustration-01.jpg?v=20260625-1",
+    title: "อยู่กับปัจจุบันอย่างอ่อนโยน",
+    alt: "ภาพเด็กน้อยนั่งภาวนาในห้องอบอุ่น"
+  },
+  {
+    src: "./assets/daily-art/daily-illustration-02.jpg?v=20260625-1",
+    title: "ทำวันนี้ให้ดีที่สุด",
+    alt: "ภาพเด็กน้อยรดน้ำต้นไม้"
+  },
+  {
+    src: "./assets/daily-art/daily-illustration-03.jpg?v=20260625-1",
+    title: "ใจที่สงบคือความสุขแท้จริง",
+    alt: "ภาพเด็กน้อยกับแมวนั่งมองภูเขาใต้ต้นไม้"
+  },
+  {
+    src: "./assets/daily-art/daily-illustration-04.jpg?v=20260625-1",
+    title: "กลับมาหาใจตัวเองบ่อย ๆ",
+    alt: "ภาพมุมพักใจ มีต้นไม้ ถ้วยชา และแมว"
+  },
+  {
+    src: "./assets/daily-art/daily-illustration-05.jpg?v=20260625-1",
+    title: "ทุกลมหายใจคือโอกาสเริ่มใหม่",
+    alt: "ภาพเด็กน้อยนั่งภาวนากับแมว"
+  },
+  {
+    src: "./assets/daily-art/daily-illustration-06.jpg?v=20260625-1",
+    title: "ไม่ต้องรับทุกอย่างมาเป็นของฉัน",
+    alt: "ภาพแมวนั่งบนรั้วไม้กับต้นไม้เล็ก"
+  },
+  {
+    src: "./assets/daily-art/daily-illustration-07.jpg?v=20260625-1",
+    title: "ปล่อยวางได้เมื่อเห็นว่าไม่ใช่ของเรา",
+    alt: "ภาพช่อดอกไม้แห้งพร้อมข้อความธรรมะวันนี้"
+  },
+  {
+    src: "./assets/daily-art/daily-illustration-08.jpg?v=20260625-1",
+    title: "เหนื่อยก็พัก แต่อย่าลืมตั้งสติ",
+    alt: "ภาพแมวนอนบนเก้าอี้ในมุมสงบ"
+  },
+  {
+    src: "./assets/daily-art/daily-illustration-09.jpg?v=20260625-1",
+    title: "มองเห็นกันด้วยเมตตา",
+    alt: "ภาพแมวกับดอกไม้เล็ก ๆ"
+  },
+  {
+    src: "./assets/daily-art/daily-illustration-10.jpg?v=20260625-1",
+    title: "อยู่กับปัจจุบันด้วยใจหนักแน่น",
+    alt: "ภาพหน้าต่างและกาน้ำชาในห้องสงบ"
+  }
+];
+
 function getSharedId() {
   const id = new URLSearchParams(window.location.search).get("dhamma");
   return teachings.some((item) => item.id === id) ? id : null;
@@ -22,9 +80,13 @@ function dateKey() {
   return `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
 }
 
-function getDailyTeachings() {
+function todayNumber() {
   const [year, month, day] = dateKey().split("-").map(Number);
-  const dayNumber = Math.floor(new Date(year, month - 1, day).getTime() / 86400000);
+  return Math.floor(new Date(year, month - 1, day).getTime() / 86400000);
+}
+
+function getDailyTeachings() {
+  const dayNumber = todayNumber();
   const setIds = [...new Set(teachings.map((item) => item.setId))];
   const setId = setIds[(dayNumber + shuffleOffset) % setIds.length];
   const daily = teachings.filter((item) => item.setId === setId);
@@ -33,6 +95,10 @@ function getDailyTeachings() {
 
   const shared = teachings.find((item) => item.id === sharedId);
   return [shared, ...daily.filter((item) => item.id !== sharedId)].slice(0, 3);
+}
+
+function getDailyArt() {
+  return DAILY_ARTS[(todayNumber() + shuffleOffset) % DAILY_ARTS.length];
 }
 
 function getSavedIds() {
@@ -186,6 +252,12 @@ function refreshIcons() {
 
 function renderToday() {
   $("#todayDate").textContent = ThaiDate.format(new Date());
+  const art = getDailyArt();
+  $("#heroCover").src = art.src;
+  $("#heroCover").alt = art.alt;
+  $("#dailyArtImage").src = art.src;
+  $("#dailyArtImage").alt = art.alt;
+  $("#dailyArtTitle").innerHTML = thaiText(art.title);
   const sharedId = getSharedId();
   $(".reading-view .eyebrow").textContent = sharedId && shuffleOffset === 0 ? "ข้อธรรมที่เพื่อนส่งมา" : "อ่านช้า ๆ ทีละข้อ";
   $("#teachingList").innerHTML = getDailyTeachings()
@@ -248,7 +320,7 @@ refreshIcons();
 
 if ("serviceWorker" in navigator && location.protocol !== "file:") {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./service-worker.js?v=20260623-3").catch(() => {
+    navigator.serviceWorker.register("./service-worker.js?v=20260625-2").catch(() => {
       // The app remains fully usable online if service-worker registration is unavailable.
     });
   });
