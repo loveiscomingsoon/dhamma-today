@@ -24,7 +24,7 @@ const APP_ASSETS = [
   "./assets/lucide.min.js?v=20260618-2",
   "./assets/crane-monkey-mark.png?v=20260619-1",
   "./assets/dhamma-today-qr.png?v=20260625-5",
-  "./assets/dhamma-today-qr-poster.png?v=20260625-5",
+  "./assets/dhamma-today-qr-poster-small.png?v=20260625-5",
   "./assets/app-icon-192.png",
   "./assets/app-icon-512.png",
   "./assets/apple-touch-icon.png",
