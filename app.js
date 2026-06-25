@@ -70,6 +70,8 @@ const DAILY_ARTS = [
   }
 ];
 
+const HERO_COVER = DAILY_ARTS[0];
+
 function getSharedId() {
   const id = new URLSearchParams(window.location.search).get("dhamma");
   return teachings.some((item) => item.id === id) ? id : null;
@@ -260,8 +262,8 @@ function refreshIcons() {
 function renderToday() {
   $("#todayDate").textContent = ThaiDate.format(new Date());
   const art = getDailyArt();
-  $("#heroCover").src = art.src;
-  $("#heroCover").alt = art.alt;
+  $("#heroCover").src = HERO_COVER.src;
+  $("#heroCover").alt = HERO_COVER.alt;
   $("#dailyArtImage").src = art.src;
   $("#dailyArtImage").alt = art.alt;
   $("#dailyArtTitle").innerHTML = thaiText(art.title);

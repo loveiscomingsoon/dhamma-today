@@ -70,10 +70,8 @@ const pages = [
     html: () => `
       <div class="cover-art-wrap">
         <img class="cover-art" src="${COVER_ART}" alt="ภาพปกธรรมะวันนี้">
-        <img class="moving-cat cover-cat" src="../assets/daily-art/cover-cat-sticker.png?v=20260625-1" alt="" aria-hidden="true">
-        <span class="cover-rights">ลิขสิทธิ์โดย นกกระยางขาว</span>
+        <img class="moving-cat cover-cat" src="../assets/daily-art/cover-cat-sticker.png?v=20260625-2" alt="" aria-hidden="true">
       </div>
-      <img class="cover-mark" src="../assets/crane-monkey-mark.png" alt="">
       <p class="page-kicker">ธรรมะสำหรับชีวิตประจำวัน</p>
       <h1>ธรรมะพกพา</h1>
       <p class="subtitle">เล่ม 1 · Dhamma Today</p>
@@ -129,7 +127,6 @@ const pages = [
     label: "ปิดเล่ม",
     html: () => `
       <img class="back-cover-art" src="../assets/daily-art/daily-illustration-03.jpg?v=20260625-1" alt="ภาพประกอบธรรมะพกพา">
-      <img class="cover-mark" src="../assets/crane-monkey-mark.png" alt="">
       <p class="page-kicker">จบเล่มที่ 1</p>
       <h2>กลับมาเปิดอ่านได้ทุกวัน</h2>
       <p class="cover-note">เรียบเรียงหลักธรรมและคำสอน จากครูอาจารย์ โดย นกกระยางขาว</p>
@@ -186,7 +183,6 @@ function renderPrintBook() {
     <article class="print-page print-cover">
       <div>
         <img class="print-cover-art" src="${COVER_ART}" alt="">
-        <img class="cover-mark" src="../assets/crane-monkey-mark.png" alt="">
         <p>ธรรมะสำหรับชีวิตประจำวัน</p>
         <h1>ธรรมะพกพา</h1>
         <p>เล่ม 1 · Dhamma Today</p>

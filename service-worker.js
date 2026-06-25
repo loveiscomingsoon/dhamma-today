@@ -1,17 +1,17 @@
-const CACHE_NAME = "dhamma-today-v25-moving-cat";
+const CACHE_NAME = "dhamma-today-v25-clean-cover-back-cat";
 const APP_ASSETS = [
   "./",
   "./index.html",
-  "./styles.css?v=20260625-7",
-  "./app.js?v=20260625-7",
+  "./styles.css?v=20260625-8",
+  "./app.js?v=20260625-8",
   "./content/dhamma-library.js?v=20260620-22",
   "./books/dhamma-pocket-book.html",
-  "./books/pocket-book.css?v=20260625-7",
-  "./books/pocket-book.js?v=20260625-7",
+  "./books/pocket-book.css?v=20260625-8",
+  "./books/pocket-book.js?v=20260625-8",
   "./manifest.webmanifest?v=20260625-2",
   "./assets/river-morning.jpg?v=20260618-2",
   "./assets/daily-art/daily-cover-01.jpg?v=20260625-1",
-  "./assets/daily-art/cover-cat-sticker.png?v=20260625-1",
+  "./assets/daily-art/cover-cat-sticker.png?v=20260625-2",
   "./assets/daily-art/daily-illustration-01.jpg?v=20260625-1",
   "./assets/daily-art/daily-illustration-02.jpg?v=20260625-1",
   "./assets/daily-art/daily-illustration-03.jpg?v=20260625-1",
