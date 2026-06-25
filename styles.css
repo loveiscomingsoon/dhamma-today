@@ -82,15 +82,6 @@ summary:focus-visible {
   box-shadow: 0 24px 70px rgba(98, 73, 48, 0.14);
 }
 
-.hero-topline {
-  position: absolute;
-  inset: 28px 28px auto;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 14px;
-}
-
 .brand {
   min-width: 0;
   display: flex;
@@ -138,21 +129,6 @@ summary:focus-visible {
   color: #7c6a58;
   font-size: 0.72rem;
   font-weight: 650;
-}
-
-.hero-date {
-  position: absolute;
-  left: 28px;
-  bottom: 28px;
-  margin: 0;
-  padding: 7px 10px;
-  color: #6b5848;
-  background: rgba(255, 250, 242, 0.9);
-  border: 1px solid rgba(214, 190, 166, 0.58);
-  border-radius: 999px;
-  font-size: 0.82rem;
-  font-weight: 750;
-  backdrop-filter: blur(8px);
 }
 
 .cover-rights {
@@ -272,6 +248,12 @@ main {
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 18px;
+}
+
+.heading-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .eyebrow {
@@ -796,10 +778,6 @@ h1 {
     padding: 10px;
   }
 
-  .hero-topline {
-    inset: 20px 18px auto;
-  }
-
   .brand-icon {
     width: 64px;
     height: 64px;
@@ -813,12 +791,6 @@ h1 {
 
   .brand strong {
     font-size: 1.05rem;
-  }
-
-  .hero-date {
-    left: 18px;
-    bottom: 18px;
-    max-width: calc(100% - 36px);
   }
 
   .cover-rights {

@@ -260,7 +260,6 @@ function refreshIcons() {
 }
 
 function renderToday() {
-  $("#todayDate").textContent = ThaiDate.format(new Date());
   const art = getDailyArt();
   const heroCover = $("#heroCover");
   if (heroCover?.tagName === "IMG") {
