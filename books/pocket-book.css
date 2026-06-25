@@ -308,18 +308,20 @@ button {
 
 .cover-cat-body {
   z-index: 1;
+  clip-path: inset(37% 0 0 0);
 }
 
 .cover-cat-head {
   z-index: 2;
-  transform-origin: 50% 47%;
-  animation: cat-head-tilt 1.8s ease-in-out infinite;
+  clip-path: inset(0 0 45% 0);
+  transform-origin: 50% 38%;
+  animation: cat-head-tilt 1.65s ease-in-out infinite;
   will-change: transform;
 }
 
 @keyframes cat-head-tilt {
-  0%, 100% { transform: rotate(-2.4deg); }
-  50% { transform: rotate(2.6deg); }
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
