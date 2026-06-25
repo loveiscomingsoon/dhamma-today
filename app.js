@@ -101,6 +101,12 @@ function getDailyArt() {
   return DAILY_ARTS[(todayNumber() + shuffleOffset) % DAILY_ARTS.length];
 }
 
+function getTeachingArt(item, index) {
+  const illustrations = DAILY_ARTS.slice(1);
+  const seed = (item.dayIndex || 0) + index + shuffleOffset;
+  return illustrations[seed % illustrations.length];
+}
+
 function getSavedIds() {
   try {
     return JSON.parse(localStorage.getItem("dhammaToday:saved") || "[]");
@@ -216,8 +222,9 @@ function sourceTemplate(source) {
 }
 
 function teachingTemplate(item, index, savedView = false) {
+  const art = getTeachingArt(item, index);
   return `
-    <article class="teaching-item" data-teaching="${item.id}" data-tone="${item.tone}">
+    <article class="teaching-item" data-teaching="${item.id}" data-tone="${item.tone}" style="--card-art: url('${art.src}')">
       <span class="teaching-number" aria-hidden="true">${index + 1}</span>
       <div class="teaching-copy">
         <p class="teaching-topic"><i data-lucide="tag" aria-hidden="true"></i>${thaiText(item.topic)}</p>
@@ -320,7 +327,7 @@ refreshIcons();
 
 if ("serviceWorker" in navigator && location.protocol !== "file:") {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./service-worker.js?v=20260625-2").catch(() => {
+    navigator.serviceWorker.register("./service-worker.js?v=20260625-4").catch(() => {
       // The app remains fully usable online if service-worker registration is unavailable.
     });
   });

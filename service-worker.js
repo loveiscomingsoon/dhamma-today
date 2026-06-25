@@ -1,9 +1,9 @@
-const CACHE_NAME = "dhamma-today-v25-themed-qr";
+const CACHE_NAME = "dhamma-today-v25-art-cards";
 const APP_ASSETS = [
   "./",
   "./index.html",
-  "./styles.css?v=20260625-2",
-  "./app.js?v=20260625-2",
+  "./styles.css?v=20260625-4",
+  "./app.js?v=20260625-4",
   "./content/dhamma-library.js?v=20260620-22",
   "./books/dhamma-pocket-book.html",
   "./books/pocket-book.css?v=20260623-3",
