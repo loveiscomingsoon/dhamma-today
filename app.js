@@ -13,7 +13,7 @@ let currentView = "today";
 let toastTimer;
 
 const HERO_COVER = {
-  src: "./assets/daily-art/dhamma-today-cover-single.png?v=20260625-1",
+  src: "./assets/daily-art/daily-cover-01.jpg?v=20260625-2",
   title: "ให้ธรรมะเป็นเรื่องใกล้ใจ",
   alt: "ปกธรรมะวันนี้ ภาพเด็กน้อยนั่งภาวนาข้างแมว"
 };
