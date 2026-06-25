@@ -70,7 +70,7 @@ const pages = [
     html: () => `
       <div class="cover-art-wrap">
         <img class="cover-art" src="${COVER_ART}" alt="ภาพปกธรรมะวันนี้">
-        <img class="moving-cat cover-cat" src="../assets/daily-art/cover-cat-sticker.png?v=20260625-2" alt="" aria-hidden="true">
+        <img class="cover-cat cover-cat-tilt" src="../assets/daily-art/cover-cat-cutout.png?v=20260625-1" alt="" aria-hidden="true">
       </div>
       <p class="page-kicker">ธรรมะสำหรับชีวิตประจำวัน</p>
       <h1>ธรรมะพกพา</h1>
