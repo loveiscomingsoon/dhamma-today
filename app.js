@@ -14,6 +14,7 @@ let toastTimer;
 
 const HERO_COVER = {
   src: "./assets/daily-art/dhamma-today-cover-single.png?v=20260625-2",
+  video: "./assets/daily-art/dhamma-today-cover-motion.mp4?v=20260625-1",
   title: "ให้ธรรมะเป็นเรื่องใกล้ใจ",
   alt: "ปกธรรมะวันนี้ ภาพเด็กน้อยนั่งภาวนาข้างแมว"
 };
@@ -261,8 +262,14 @@ function refreshIcons() {
 function renderToday() {
   $("#todayDate").textContent = ThaiDate.format(new Date());
   const art = getDailyArt();
-  $("#heroCover").src = HERO_COVER.src;
-  $("#heroCover").alt = HERO_COVER.alt;
+  const heroCover = $("#heroCover");
+  if (heroCover?.tagName === "IMG") {
+    heroCover.src = HERO_COVER.src;
+    heroCover.alt = HERO_COVER.alt;
+  } else if (heroCover?.tagName === "VIDEO") {
+    heroCover.poster = HERO_COVER.src;
+    heroCover.setAttribute("aria-label", `ปกธรรมะวันนี้แบบวิดีโอเคลื่อนไหว ${HERO_COVER.alt}`);
+  }
   $("#dailyArtImage").src = art.src;
   $("#dailyArtImage").alt = art.alt;
   $("#dailyArtTitle").innerHTML = thaiText(art.title);

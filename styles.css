@@ -76,6 +76,7 @@ summary:focus-visible {
   display: block;
   object-fit: cover;
   object-position: center top;
+  background: #fff8ef;
   border: 1px solid rgba(213, 193, 171, 0.72);
   border-radius: 18px;
   box-shadow: 0 24px 70px rgba(98, 73, 48, 0.14);

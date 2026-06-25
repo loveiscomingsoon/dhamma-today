@@ -28,6 +28,7 @@ const BOOK_ARTS = [
 ];
 
 const COVER_ART = "../assets/daily-art/dhamma-today-cover-single.png?v=20260625-2";
+const COVER_VIDEO = "../assets/daily-art/dhamma-today-cover-motion.mp4?v=20260625-1";
 
 function bookArtForPage(index) {
   return BOOK_ARTS[index % BOOK_ARTS.length];
@@ -69,7 +70,9 @@ const pages = [
     label: "ปก",
     html: () => `
       <div class="cover-art-wrap">
-        <img class="cover-art" src="${COVER_ART}" alt="ภาพปกธรรมะวันนี้">
+        <video class="cover-art" autoplay muted loop playsinline preload="metadata" poster="${COVER_ART}" aria-label="ภาพปกธรรมะวันนี้แบบวิดีโอเคลื่อนไหว">
+          <source src="${COVER_VIDEO}" type="video/mp4">
+        </video>
       </div>
       <p class="page-kicker">ธรรมะสำหรับชีวิตประจำวัน</p>
       <h1>ธรรมะพกพา</h1>
