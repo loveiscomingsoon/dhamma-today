@@ -27,7 +27,7 @@ const BOOK_ARTS = [
   "../assets/daily-art/daily-illustration-10.jpg?v=20260625-1"
 ];
 
-const COVER_ART = "../assets/daily-art/daily-cover-01.jpg?v=20260625-2";
+const COVER_ART = "../assets/daily-art/dhamma-today-cover-single.png?v=20260625-2";
 
 function bookArtForPage(index) {
   return BOOK_ARTS[index % BOOK_ARTS.length];
