@@ -13,8 +13,8 @@ let currentView = "today";
 let toastTimer;
 
 const HERO_COVER = {
-  src: "./assets/daily-art/dhamma-today-cover-single.png?v=20260625-2",
-  video: "./assets/daily-art/dhamma-today-cover-motion.mp4?v=20260625-1",
+  src: "./assets/daily-art/dhamma-today-cover-single.png?v=20260626-2",
+  video: "./assets/daily-art/dhamma-today-cover-motion.mp4?v=20260626-2",
   title: "ให้ธรรมะเป็นเรื่องใกล้ใจ",
   alt: "ปกธรรมะวันนี้ ภาพเด็กน้อยนั่งภาวนาข้างแมว"
 };
@@ -334,7 +334,7 @@ refreshIcons();
 
 if ("serviceWorker" in navigator && location.protocol !== "file:") {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./service-worker.js?v=20260626-1").then((registration) => {
+    navigator.serviceWorker.register("./service-worker.js?v=20260626-2").then((registration) => {
       registration.update();
     }).catch(() => {
       // The app remains fully usable online if service-worker registration is unavailable.
