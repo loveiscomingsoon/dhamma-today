@@ -605,7 +605,7 @@ h1 {
   min-width: 0;
   display: grid;
   justify-items: center;
-  gap: 8px;
+  gap: 7px;
   padding: 10px;
   border: 1px solid #e3cab4;
   border-radius: 14px;
@@ -614,6 +614,20 @@ h1 {
   color: #5f4b3c;
   text-align: center;
   text-decoration: none;
+}
+
+.qr-card-label {
+  max-width: 100%;
+  padding: 3px 9px;
+  border: 1px solid #ead6c4;
+  border-radius: 999px;
+  color: #6c5544;
+  background: #fff5eb;
+  font-size: 0.7rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.35;
+  white-space: nowrap;
 }
 
 .qr-card img {
