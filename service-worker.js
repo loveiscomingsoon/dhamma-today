@@ -1,9 +1,9 @@
-const CACHE_NAME = "dhamma-today-v26-motion-cover-v2";
+const CACHE_NAME = "dhamma-today-v26-motion-fit";
 const APP_ASSETS = [
   "./",
   "./index.html",
-  "./styles.css?v=20260625-13",
-  "./app.js?v=20260626-2",
+  "./styles.css?v=20260626-3",
+  "./app.js?v=20260626-3",
   "./content/dhamma-library.js?v=20260620-22",
   "./books/dhamma-pocket-book.html",
   "./books/pocket-book.css?v=20260626-2",
