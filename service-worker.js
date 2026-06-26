@@ -1,9 +1,9 @@
-const CACHE_NAME = "dhamma-today-v25-motion-cover-refresh";
+const CACHE_NAME = "dhamma-today-v26-network-first";
 const APP_ASSETS = [
   "./",
   "./index.html",
   "./styles.css?v=20260625-13",
-  "./app.js?v=20260625-14",
+  "./app.js?v=20260626-1",
   "./content/dhamma-library.js?v=20260620-22",
   "./books/dhamma-pocket-book.html",
   "./books/pocket-book.css?v=20260625-14",
@@ -48,6 +48,18 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
+
+  if (event.request.mode === "navigate" || event.request.destination === "document") {
+    event.respondWith(
+      fetch(event.request).then((response) => {
+        if (!response || response.status !== 200) return response;
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+        return response;
+      }).catch(() => caches.match(event.request).then((cached) => cached || caches.match("./index.html")))
+    );
+    return;
+  }
 
   event.respondWith(
     caches.match(event.request).then((cached) => {

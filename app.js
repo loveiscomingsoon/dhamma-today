@@ -334,7 +334,7 @@ refreshIcons();
 
 if ("serviceWorker" in navigator && location.protocol !== "file:") {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./service-worker.js?v=20260625-5").then((registration) => {
+    navigator.serviceWorker.register("./service-worker.js?v=20260626-1").then((registration) => {
       registration.update();
     }).catch(() => {
       // The app remains fully usable online if service-worker registration is unavailable.
