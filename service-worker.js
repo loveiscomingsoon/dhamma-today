@@ -1,9 +1,9 @@
-const CACHE_NAME = "dhamma-today-v26-motion-fit";
+const CACHE_NAME = "dhamma-today-v26-motion-fit-qr";
 const APP_ASSETS = [
   "./",
   "./index.html",
   "./styles.css?v=20260626-3",
-  "./app.js?v=20260626-3",
+  "./app.js?v=20260626-4",
   "./content/dhamma-library.js?v=20260620-22",
   "./books/dhamma-pocket-book.html",
   "./books/pocket-book.css?v=20260626-2",
@@ -24,8 +24,8 @@ const APP_ASSETS = [
   "./assets/daily-art/daily-illustration-10.jpg?v=20260625-1",
   "./assets/lucide.min.js?v=20260618-2",
   "./assets/crane-monkey-mark.png?v=20260619-1",
-  "./assets/dhamma-today-qr.png?v=20260625-5",
-  "./assets/dhamma-today-qr-poster-small.png?v=20260625-5",
+  "./assets/dhamma-today-qr.png?v=20260626-4",
+  "./assets/dhamma-today-qr-poster-small.png?v=20260626-4",
   "./assets/app-icon-192.png",
   "./assets/app-icon-512.png",
   "./assets/apple-touch-icon.png",
