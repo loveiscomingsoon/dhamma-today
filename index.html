@@ -14,7 +14,7 @@
     <link rel="manifest" href="./manifest.webmanifest?v=20260625-2">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png">
     <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
-    <link rel="stylesheet" href="./styles.css?v=20260626-3">
+    <link rel="stylesheet" href="./styles.css?v=20260626-7">
   </head>
   <body>
     <script>
@@ -91,13 +91,25 @@
       <section class="qr-share" aria-labelledby="qrShareHeading">
         <div>
           <p class="eyebrow">ส่งต่อให้กัลยาณมิตร</p>
-          <h2 id="qrShareHeading">สแกนเพื่ออ่านธรรมะวันนี้</h2>
-          <p>Scan to read Dhamma Today</p>
-          <a href="./assets/dhamma-today-qr-poster-small.png?v=20260626-6" target="_blank" rel="noopener">เปิดโปสเตอร์ QR ขนาดเต็ม</a>
+          <h2 id="qrShareHeading">QR สำหรับส่งต่อ</h2>
+          <p>แยกลิงก์ธรรมะวันนี้ และ Dhamma Life</p>
         </div>
-        <a class="qr-image-link" href="./assets/dhamma-today-qr-poster-small.png?v=20260626-6" target="_blank" rel="noopener" aria-label="เปิดโปสเตอร์ QR ธรรมะวันนี้ขนาดเต็ม">
-          <img src="./assets/dhamma-today-qr.png?v=20260626-6" alt="QR Code สำหรับเปิดแอปธรรมะวันนี้">
-        </a>
+        <div class="qr-links" aria-label="QR Code สำหรับส่งต่อ">
+          <a class="qr-card" href="./assets/dhamma-today-qr-poster-small.png?v=20260626-7" target="_blank" rel="noopener" aria-label="เปิด QR ธรรมะวันนี้ขนาดเต็ม">
+            <img src="./assets/dhamma-today-qr.png?v=20260626-7" alt="QR Code สำหรับเปิดธรรมะวันนี้">
+            <span>
+              <strong>ธรรมะวันนี้</strong>
+              <small>Dhamma Today</small>
+            </span>
+          </a>
+          <a class="qr-card" href="./assets/dhamma-life-qr-poster-small.png?v=20260626-7" target="_blank" rel="noopener" aria-label="เปิด QR Dhamma Life ขนาดเต็ม">
+            <img src="./assets/dhamma-life-qr.png?v=20260626-7" alt="QR Code สำหรับเปิด Dhamma Life">
+            <span>
+              <strong>Dhamma Life</strong>
+              <small>Cloud Run</small>
+            </span>
+          </a>
+        </div>
       </section>
 
       <footer class="app-credit">
@@ -139,7 +151,8 @@
         <p class="dialog-note rights-note">สิทธิในคำสอน หนังสือ และวิดีโอต้นฉบับเป็นของผู้สร้างสรรค์หรือผู้ทรงสิทธิเดิม การนำงานเรียบเรียง การจัดหมวด หรือรูปแบบแอปนี้ไปเผยแพร่ซ้ำ กรุณาติดต่อ <a href="mailto:loveiscomingsoon@gmail.com">loveiscomingsoon@gmail.com</a> หรือ <a href="tel:0992966166">099-296-6166</a></p>
         <div class="dialog-links">
           <a class="book-link" href="./books/dhamma-pocket-book.html">เปิดธรรมะพกพาแบบหนังสือออนไลน์</a>
-          <a class="book-link" href="./assets/dhamma-today-qr-poster-small.png?v=20260626-6" target="_blank" rel="noopener">QR สำหรับส่งต่อ</a>
+          <a class="book-link" href="./assets/dhamma-today-qr-poster-small.png?v=20260626-7" target="_blank" rel="noopener">QR ธรรมะวันนี้</a>
+          <a class="book-link" href="./assets/dhamma-life-qr-poster-small.png?v=20260626-7" target="_blank" rel="noopener">QR Dhamma Life</a>
         </div>
       </form>
     </dialog>
@@ -148,6 +161,6 @@
 
     <script src="./assets/lucide.min.js?v=20260618-2"></script>
     <script src="./content/dhamma-library.js?v=20260620-22"></script>
-    <script src="./app.js?v=20260626-6"></script>
+    <script src="./app.js?v=20260626-7"></script>
   </body>
 </html>
