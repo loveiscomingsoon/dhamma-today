@@ -21,7 +21,7 @@ body {
   min-height: 100vh;
   background:
     linear-gradient(rgba(255, 248, 239, 0.88), rgba(255, 248, 239, 0.96)),
-    url("../assets/daily-art/daily-illustration-10.jpg?v=20260625-1") center top / 560px auto fixed;
+    url("../assets/daily-art/seasons-of-life-cover.png?v=20260628-3") center top / 620px auto fixed;
   color: var(--ink);
 }
 
@@ -37,11 +37,9 @@ a {
 
 .life-hero {
   position: relative;
-  display: grid;
-  gap: 22px;
+  display: block;
   overflow: hidden;
-  min-height: 520px;
-  padding: 26px;
+  padding: 0;
   border: 1px solid var(--line);
   border-radius: 28px;
   background: var(--card);
@@ -49,7 +47,9 @@ a {
 }
 
 .back-link {
-  position: relative;
+  position: absolute;
+  top: 18px;
+  left: 18px;
   z-index: 2;
   width: fit-content;
   padding: 9px 14px;
@@ -60,14 +60,6 @@ a {
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
-}
-
-.hero-copy {
-  position: relative;
-  z-index: 2;
-  align-self: end;
-  max-width: 560px;
-  padding-top: 140px;
 }
 
 .eyebrow {
@@ -83,35 +75,12 @@ p {
   margin-top: 0;
 }
 
-.life-hero h1 {
-  margin-bottom: 4px;
-  font-size: clamp(48px, 13vw, 96px);
-  line-height: 0.95;
-  letter-spacing: 0;
-}
-
-.life-hero h2 {
-  margin-bottom: 14px;
-  color: #6d5646;
-  font-size: clamp(32px, 8vw, 58px);
-  line-height: 1.05;
-}
-
-.life-hero p:last-child {
-  max-width: 460px;
-  color: var(--muted);
-  font-size: 19px;
-  line-height: 1.75;
-}
-
-.life-hero img {
-  position: absolute;
-  right: -26px;
-  bottom: -10px;
-  width: min(72%, 620px);
-  max-height: 470px;
-  object-fit: contain;
-  opacity: 0.9;
+.cover-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1536 / 2304;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .age-panel,
@@ -179,7 +148,7 @@ p {
 .wisdom-card {
   display: grid;
   gap: 12px;
-  min-height: 260px;
+  min-height: 220px;
   padding: 22px;
   border: 1px solid var(--line);
   border-radius: 22px;
@@ -199,16 +168,6 @@ p {
   font-size: 18px;
   font-style: italic;
   line-height: 1.6;
-}
-
-.wisdom-card .practice {
-  align-self: end;
-  margin: 0;
-  padding: 12px 14px;
-  border-radius: 14px;
-  background: rgba(244, 225, 207, 0.82);
-  color: #604d3e;
-  line-height: 1.65;
 }
 
 label {
@@ -293,19 +252,7 @@ textarea {
   }
 
   .life-hero {
-    min-height: 600px;
-    padding: 22px;
-  }
-
-  .hero-copy {
-    padding-top: 80px;
-  }
-
-  .life-hero img {
-    right: -60px;
-    bottom: 8px;
-    width: 112%;
-    opacity: 0.72;
+    border-radius: 22px;
   }
 
   .age-panel,
