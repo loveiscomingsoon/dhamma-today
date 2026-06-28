@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff8ef">
+    <meta name="description" content="Dhamma Life ธรรมะชีวิต สำหรับอ่านและใช้พิจารณาใจในชีวิตประจำวัน">
+    <meta name="author" content="นกกระยางขาว">
+    <title>Dhamma Life | ธรรมะชีวิต</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+    <link rel="stylesheet" href="./life.css?v=20260628-1">
+  </head>
+  <body>
+    <main class="life-shell">
+      <header class="life-hero">
+        <a class="back-link" href="../">กลับธรรมะวันนี้</a>
+        <div class="hero-copy">
+          <p class="eyebrow">อ่านง่าย ใช้ได้จริง</p>
+          <h1>Dhamma Life</h1>
+          <h2>ธรรมะชีวิต</h2>
+          <p>ใช้ธรรมะดูแลใจในชีวิตประจำวัน ทีละเรื่อง ทีละลมหายใจ</p>
+        </div>
+        <img src="../assets/daily-art/daily-illustration-03.jpg?v=20260625-1" alt="ภาพเด็กน้อยกับแมวนั่งมองภูเขาใต้ต้นไม้">
+      </header>
+
+      <section class="age-panel" aria-labelledby="ageHeading">
+        <div class="section-heading">
+          <p class="eyebrow">เลือกช่วงวัย</p>
+          <h2 id="ageHeading">ธรรมะที่เหมาะกับวันนี้</h2>
+        </div>
+        <div class="age-tabs" role="tablist" aria-label="เลือกช่วงวัย">
+          <button class="active" type="button" data-age="kids">เด็กน้อย <small>Kids</small></button>
+          <button type="button" data-age="teens">วัยรุ่น <small>Teens</small></button>
+          <button type="button" data-age="adults">วัยทำงาน <small>Adults</small></button>
+          <button type="button" data-age="seniors">ผู้สูงวัย <small>Seniors</small></button>
+        </div>
+        <div class="wisdom-grid" id="wisdomGrid" aria-live="polite"></div>
+      </section>
+
+      <section class="reflect-panel" aria-labelledby="reflectHeading">
+        <div class="section-heading">
+          <p class="eyebrow">ถามใจวันนี้</p>
+          <h2 id="reflectHeading">แปลงเรื่องในใจเป็นข้อภาวนา</h2>
+        </div>
+        <label for="lifeInput">เขียนเรื่องที่กำลังติดอยู่ในใจสั้น ๆ</label>
+        <textarea id="lifeInput" placeholder="เช่น วันนี้ใจเหนื่อย กังวลเรื่องงาน หรือไม่สบายใจกับคำพูดของใครบางคน"></textarea>
+        <button class="reflect-button" id="reflectButton" type="button">เรียบเรียงเป็นข้อภาวนา</button>
+        <article class="reflection-card" id="reflectionCard" hidden></article>
+      </section>
+
+      <footer class="life-credit">
+        <p>เรียบเรียงหลักธรรมและคำสอน จากครูอาจารย์ โดย นกกระยางขาว</p>
+        <p>งานเรียบเรียง การคัดเลือก การจัดระบบ และการออกแบบ © 2026 นกกระยางขาว</p>
+        <a href="mailto:loveiscomingsoon@gmail.com">loveiscomingsoon@gmail.com</a>
+        <span aria-hidden="true"> · </span>
+        <a href="tel:0992966166">099-296-6166</a>
+      </footer>
+    </main>
+    <p class="toast" id="toast" role="status" aria-live="polite" hidden></p>
+    <script src="./life.js?v=20260628-1"></script>
+  </body>
+</html>
