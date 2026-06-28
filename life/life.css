@@ -1,15 +1,22 @@
 :root {
   color-scheme: light;
-  --paper: #fff8ef;
-  --paper-soft: #f6eadc;
+  --paper: #f7fbf4;
+  --paper-soft: #eef8ec;
   --card: #fffdf8;
-  --ink: #493a2e;
-  --muted: #827368;
-  --line: #ead8c6;
-  --sage: #6f8664;
+  --ink: #435043;
+  --muted: #758174;
+  --line: #dce9cf;
+  --sage: #658064;
   --peach: #d9907c;
-  --gold: #c99a3f;
+  --gold: #c8a85a;
+  --sky-soft: #eaf6fb;
+  --green-soft: #edf7e8;
+  --yellow-soft: #fff6d8;
+  --blue-line: #cfe7ef;
+  --green-line: #d5e8cc;
+  --yellow-line: #eadfb7;
   font-family: "Sukhumvit Set", "Noto Sans Thai", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
 }
 
 * {
@@ -20,9 +27,12 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    linear-gradient(rgba(255, 248, 239, 0.88), rgba(255, 248, 239, 0.96)),
-    url("../assets/daily-art/seasons-of-life-cover.png?v=20260628-3") center top / 620px auto fixed;
+    radial-gradient(circle at 12% 12%, rgba(222, 243, 253, 0.78), transparent 32%),
+    radial-gradient(circle at 88% 20%, rgba(237, 247, 218, 0.78), transparent 34%),
+    linear-gradient(145deg, #f2fbff 0%, #f7fbf4 48%, #fff8df 100%);
   color: var(--ink);
+  font-size: 17px;
+  line-height: 1.72;
 }
 
 a {
@@ -58,7 +68,7 @@ a {
   background: rgba(255, 253, 248, 0.84);
   color: var(--muted);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
   text-decoration: none;
 }
 
@@ -66,7 +76,7 @@ a {
   margin: 0 0 8px;
   color: var(--sage);
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 h1,
@@ -89,7 +99,8 @@ p {
   padding: 24px;
   border: 1px solid var(--line);
   border-radius: 24px;
-  background: rgba(255, 253, 248, 0.92);
+  background: rgba(255, 255, 250, 0.82);
+  box-shadow: 0 18px 60px rgba(88, 112, 86, 0.08);
 }
 
 .section-heading {
@@ -98,7 +109,9 @@ p {
 
 .section-heading h2 {
   margin-bottom: 0;
-  font-size: 28px;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.32;
 }
 
 .age-tabs {
@@ -116,7 +129,7 @@ p {
   background: #fff;
   color: var(--ink);
   font: inherit;
-  font-weight: 800;
+  font-weight: 500;
   cursor: pointer;
 }
 
@@ -130,13 +143,13 @@ p {
 .age-tabs small {
   color: var(--muted);
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 500;
 }
 
 .age-tabs button.active {
-  border-color: #d8b38e;
-  background: #f4e1cf;
-  box-shadow: inset 0 -3px 0 rgba(201, 154, 63, 0.32);
+  border-color: #b9d8b5;
+  background: #eaf7e4;
+  box-shadow: inset 0 -3px 0 rgba(126, 161, 116, 0.26);
 }
 
 .wisdom-grid {
@@ -149,32 +162,64 @@ p {
   display: grid;
   gap: 12px;
   min-height: 220px;
-  padding: 22px;
+  padding: 24px;
   border: 1px solid var(--line);
   border-radius: 22px;
   background:
-    linear-gradient(rgba(255, 253, 248, 0.94), rgba(255, 253, 248, 0.97)),
+    linear-gradient(rgba(255, 255, 252, 0.88), rgba(255, 255, 252, 0.94)),
+    var(--art) right bottom / 210px auto no-repeat;
+}
+
+.wisdom-card:nth-child(3n + 1) {
+  border-color: var(--blue-line);
+  background:
+    linear-gradient(rgba(234, 246, 251, 0.9), rgba(255, 255, 252, 0.95)),
+    var(--art) right bottom / 210px auto no-repeat;
+}
+
+.wisdom-card:nth-child(3n + 2) {
+  border-color: var(--green-line);
+  background:
+    linear-gradient(rgba(237, 247, 232, 0.9), rgba(255, 255, 252, 0.95)),
+    var(--art) right bottom / 210px auto no-repeat;
+}
+
+.wisdom-card:nth-child(3n + 3) {
+  border-color: var(--yellow-line);
+  background:
+    linear-gradient(rgba(255, 246, 216, 0.9), rgba(255, 255, 252, 0.95)),
     var(--art) right bottom / 210px auto no-repeat;
 }
 
 .wisdom-card h3 {
   margin: 0;
-  font-size: 25px;
-  line-height: 1.35;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.42;
 }
 
 .wisdom-card .english {
-  color: #7b6a5d;
-  font-size: 18px;
+  color: #667466;
+  font-size: 19px;
+  font-weight: 400;
   font-style: italic;
-  line-height: 1.6;
+  line-height: 1.7;
+}
+
+.wisdom-card > p:not(.english) {
+  margin-bottom: 0;
+  max-width: 92%;
+  color: #4f5e50;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.86;
 }
 
 label {
   display: block;
   margin-bottom: 10px;
   color: var(--muted);
-  font-weight: 800;
+  font-weight: 500;
 }
 
 textarea {
@@ -186,35 +231,40 @@ textarea {
   background: #fff;
   color: var(--ink);
   font: inherit;
-  font-size: 18px;
-  line-height: 1.7;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.82;
   resize: vertical;
 }
 
 .reflect-button {
   width: 100%;
   margin-top: 12px;
-  background: #4e6949;
+  background: #6f996d;
   color: #fffdf8;
+  font-weight: 500;
 }
 
 .reflection-card {
   margin-top: 16px;
   padding: 20px;
-  border: 1px solid #e3c3a4;
+  border: 1px solid #d6e5c7;
   border-radius: 20px;
-  background: #f8eadb;
+  background:
+    linear-gradient(140deg, rgba(234, 246, 251, 0.74), rgba(237, 247, 232, 0.76) 54%, rgba(255, 246, 216, 0.74));
 }
 
 .reflection-card h3 {
   margin: 0 0 12px;
-  font-size: 24px;
+  font-size: 27px;
+  font-weight: 500;
 }
 
 .reflection-card p {
   margin-bottom: 10px;
-  font-size: 18px;
-  line-height: 1.75;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.84;
 }
 
 .life-credit {
@@ -241,7 +291,7 @@ textarea {
   border-radius: 999px;
   background: #493a2e;
   color: #fffdf8;
-  font-weight: 800;
+  font-weight: 500;
   text-align: center;
   box-shadow: 0 16px 48px rgba(73, 58, 46, 0.2);
 }
@@ -258,6 +308,19 @@ textarea {
   .age-panel,
   .reflect-panel {
     padding: 18px;
+  }
+
+  .section-heading h2 {
+    font-size: 28px;
+  }
+
+  .wisdom-card h3 {
+    font-size: 26px;
+  }
+
+  .wisdom-card > p:not(.english) {
+    font-size: 19px;
+    max-width: 100%;
   }
 
   .age-tabs {

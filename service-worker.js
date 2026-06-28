@@ -1,17 +1,17 @@
-const CACHE_NAME = "dhamma-today-v28-seasons-cover";
+const CACHE_NAME = "dhamma-today-v28-seasons-pastel-type";
 const APP_ASSETS = [
   "./",
   "./index.html",
   "./styles.css?v=20260626-8",
-  "./app.js?v=20260628-3",
+  "./app.js?v=20260628-4",
   "./content/dhamma-library.js?v=20260620-22",
   "./books/dhamma-pocket-book.html",
   "./books/pocket-book.css?v=20260626-2",
   "./books/pocket-book.js?v=20260626-2",
   "./life/",
   "./life/index.html",
-  "./life/life.css?v=20260628-3",
-  "./life/life.js?v=20260628-3",
+  "./life/life.css?v=20260628-4",
+  "./life/life.js?v=20260628-4",
   "./manifest.webmanifest?v=20260625-2",
   "./assets/river-morning.jpg?v=20260618-2",
   "./assets/daily-art/dhamma-today-cover-single.png?v=20260626-2",
