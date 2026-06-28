@@ -721,6 +721,14 @@ h1 {
   height: 21px;
 }
 
+.nav-app-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  object-fit: cover;
+  box-shadow: 0 3px 9px rgba(81, 65, 45, 0.16);
+}
+
 .about-dialog {
   width: min(420px, calc(100% - 32px));
   padding: 0;
