@@ -1,4 +1,4 @@
-const CACHE_NAME = "dhamma-today-v28-seasons-cover-clean";
+const CACHE_NAME = "dhamma-today-v28-pocket-install";
 const APP_ASSETS = [
   "./",
   "./index.html",
@@ -6,6 +6,7 @@ const APP_ASSETS = [
   "./app.js?v=20260628-5",
   "./content/dhamma-library.js?v=20260620-22",
   "./books/dhamma-pocket-book.html",
+  "./books/pocket-book.webmanifest?v=20260628-1",
   "./books/pocket-book.css?v=20260626-2",
   "./books/pocket-book.js?v=20260626-2",
   "./life/",
@@ -35,6 +36,9 @@ const APP_ASSETS = [
   "./assets/dhamma-life-qr-poster-small.png?v=20260628-5",
   "./assets/app-icon-192.png",
   "./assets/app-icon-512.png",
+  "./assets/pocket-book-icon-192.png?v=20260628-1",
+  "./assets/pocket-book-icon-512.png?v=20260628-1",
+  "./assets/pocket-book-apple-touch-icon.png?v=20260628-1",
   "./assets/apple-touch-icon.png",
   "./assets/favicon-32.png"
 ];
