@@ -1,10 +1,10 @@
-const CACHE_NAME = "dhamma-today-v29-dhamma-today-icon";
+const CACHE_NAME = "dhamma-today-v29-remove-questions-book";
 const APP_ASSETS = [
   "./",
   "./index.html",
   "./styles.css?v=20260626-8",
-  "./app.js?v=20260629-3",
-  "./content/dhamma-library.js?v=20260620-22",
+  "./app.js?v=20260629-4",
+  "./content/dhamma-library.js?v=20260629-4",
   "./books/dhamma-pocket-book.html",
   "./books/pocket-book.webmanifest?v=20260629-2",
   "./books/pocket-book.css?v=20260626-2",
