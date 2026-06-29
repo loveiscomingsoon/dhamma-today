@@ -1,9 +1,9 @@
-const CACHE_NAME = "dhamma-today-v29-three-install-icons";
+const CACHE_NAME = "dhamma-today-v29-dhamma-today-icon";
 const APP_ASSETS = [
   "./",
   "./index.html",
   "./styles.css?v=20260626-8",
-  "./app.js?v=20260629-2",
+  "./app.js?v=20260629-3",
   "./content/dhamma-library.js?v=20260620-22",
   "./books/dhamma-pocket-book.html",
   "./books/pocket-book.webmanifest?v=20260629-2",
@@ -14,7 +14,7 @@ const APP_ASSETS = [
   "./life/life.webmanifest?v=20260629-2",
   "./life/life.css?v=20260629-1",
   "./life/life.js?v=20260629-1",
-  "./manifest.webmanifest?v=20260629-2",
+  "./manifest.webmanifest?v=20260629-3",
   "./assets/river-morning.jpg?v=20260618-2",
   "./assets/daily-art/dhamma-today-cover-single.png?v=20260626-2",
   "./assets/daily-art/dhamma-today-cover-motion.mp4?v=20260626-2",
@@ -35,15 +35,15 @@ const APP_ASSETS = [
   "./assets/dhamma-today-qr-poster-small.png?v=20260628-5",
   "./assets/dhamma-life-qr.png?v=20260628-5",
   "./assets/dhamma-life-qr-poster-small.png?v=20260628-5",
-  "./assets/app-icon-192.png?v=20260629-2",
-  "./assets/app-icon-512.png?v=20260629-2",
+  "./assets/app-icon-192.png?v=20260629-3",
+  "./assets/app-icon-512.png?v=20260629-3",
   "./assets/pocket-book-icon-192.png?v=20260629-2",
   "./assets/pocket-book-icon-512.png?v=20260629-2",
   "./assets/pocket-book-apple-touch-icon.png?v=20260629-2",
   "./assets/life-icon-192.png?v=20260629-2",
   "./assets/life-icon-512.png?v=20260629-2",
   "./assets/life-apple-touch-icon.png?v=20260629-2",
-  "./assets/apple-touch-icon.png?v=20260629-2",
+  "./assets/apple-touch-icon.png?v=20260629-3",
   "./assets/favicon-32.png"
 ];
 
