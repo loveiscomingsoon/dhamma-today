@@ -154,65 +154,87 @@ p {
 
 .wisdom-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: 1fr;
 }
 
 .wisdom-card {
   display: grid;
-  gap: 12px;
-  min-height: 220px;
-  padding: 24px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 18px;
+  min-height: 300px;
+  padding: 28px;
   border: 1px solid var(--line);
   border-radius: 22px;
   background:
     linear-gradient(rgba(255, 255, 252, 0.88), rgba(255, 255, 252, 0.94)),
-    var(--art) right bottom / 210px auto no-repeat;
+    var(--art) right bottom / 240px auto no-repeat;
 }
 
-.wisdom-card:nth-child(3n + 1) {
-  border-color: var(--blue-line);
-  background:
-    linear-gradient(rgba(234, 246, 251, 0.9), rgba(255, 255, 252, 0.95)),
-    var(--art) right bottom / 210px auto no-repeat;
-}
-
-.wisdom-card:nth-child(3n + 2) {
+.wisdom-card {
   border-color: var(--green-line);
   background:
-    linear-gradient(rgba(237, 247, 232, 0.9), rgba(255, 255, 252, 0.95)),
-    var(--art) right bottom / 210px auto no-repeat;
+    linear-gradient(130deg, rgba(234, 246, 251, 0.92), rgba(237, 247, 232, 0.92) 54%, rgba(255, 246, 216, 0.9)),
+    var(--art) right bottom / 240px auto no-repeat;
 }
 
-.wisdom-card:nth-child(3n + 3) {
-  border-color: var(--yellow-line);
-  background:
-    linear-gradient(rgba(255, 246, 216, 0.9), rgba(255, 255, 252, 0.95)),
-    var(--art) right bottom / 210px auto no-repeat;
+.wisdom-lang {
+  padding: 20px;
+  border: 1px solid rgba(207, 231, 239, 0.86);
+  border-radius: 18px;
+  background: rgba(255, 255, 252, 0.74);
+  backdrop-filter: blur(2px);
+}
+
+.wisdom-lang span {
+  display: inline-flex;
+  margin-bottom: 10px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #eaf6fb;
+  color: #60756b;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.english-block {
+  border-color: rgba(213, 232, 204, 0.9);
+  background: rgba(255, 253, 248, 0.78);
 }
 
 .wisdom-card h3 {
   margin: 0;
-  font-size: 28px;
+  font-size: 27px;
   font-weight: 500;
   line-height: 1.42;
 }
 
-.wisdom-card .english {
-  color: #667466;
+.wisdom-card p {
+  margin: 12px 0 0;
+  color: #4f5e50;
   font-size: 19px;
   font-weight: 400;
-  font-style: italic;
-  line-height: 1.7;
+  line-height: 1.86;
 }
 
-.wisdom-card > p:not(.english) {
-  margin-bottom: 0;
-  max-width: 92%;
-  color: #4f5e50;
-  font-size: 20px;
+.wisdom-card strong {
+  display: block;
+  margin-top: 16px;
+  color: #5f704f;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.76;
+}
+
+.english-block h3 {
+  font-size: 25px;
+  line-height: 1.36;
+}
+
+.english-block p {
+  color: #667466;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 1.86;
+  line-height: 1.72;
 }
 
 label {
@@ -318,9 +340,8 @@ textarea {
     font-size: 26px;
   }
 
-  .wisdom-card > p:not(.english) {
+  .wisdom-card p {
     font-size: 19px;
-    max-width: 100%;
   }
 
   .age-tabs {
@@ -329,5 +350,12 @@ textarea {
 
   .wisdom-grid {
     grid-template-columns: 1fr;
+  }
+
+  .wisdom-card {
+    grid-template-columns: 1fr;
+    background:
+      linear-gradient(130deg, rgba(234, 246, 251, 0.94), rgba(237, 247, 232, 0.94) 54%, rgba(255, 246, 216, 0.92)),
+      var(--art) right bottom / 180px auto no-repeat;
   }
 }
