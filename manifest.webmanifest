@@ -1,6 +1,7 @@
 {
   "name": "ธรรมะวันนี้ | Dhamma Today",
   "short_name": "ธรรมะวันนี้",
+  "id": "./?app=dhamma-today",
   "description": "ธรรมะสั้น ๆ สำหรับอ่านและนำไปใช้ในชีวิตประจำวัน",
   "lang": "th",
   "start_url": "./",
@@ -11,13 +12,13 @@
   "theme_color": "#fff8ef",
   "icons": [
     {
-      "src": "./assets/app-icon-192.png",
+      "src": "./assets/app-icon-192.png?v=20260629-2",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "./assets/app-icon-512.png",
+      "src": "./assets/app-icon-512.png?v=20260629-2",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"

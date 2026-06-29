@@ -8,7 +8,8 @@
     <meta name="author" content="นกกระยางขาว">
     <title>ธรรมะสี่วัย | Seasons of Life</title>
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
-    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="../assets/life-apple-touch-icon.png?v=20260629-2">
+    <link rel="manifest" href="./life.webmanifest?v=20260629-2">
     <link rel="stylesheet" href="./life.css?v=20260629-1">
   </head>
   <body>
@@ -53,5 +54,12 @@
     </main>
     <p class="toast" id="toast" role="status" aria-live="polite" hidden></p>
     <script src="./life.js?v=20260629-1"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("../service-worker.js?v=20260629-2").catch(() => {});
+        });
+      }
+    </script>
   </body>
 </html>

@@ -1,0 +1,27 @@
+{
+  "name": "ธรรมะสี่วัย | Seasons of Life",
+  "short_name": "ธรรมะสี่วัย",
+  "id": "./?app=seasons-of-life",
+  "description": "ธรรมะสองภาษา สำหรับพิจารณาใจในแต่ละช่วงวัยของชีวิต",
+  "lang": "th",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f7fbf4",
+  "theme_color": "#fff8ef",
+  "icons": [
+    {
+      "src": "../assets/life-icon-192.png?v=20260629-2",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../assets/life-icon-512.png?v=20260629-2",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
