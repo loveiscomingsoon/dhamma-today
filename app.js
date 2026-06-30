@@ -136,7 +136,7 @@ function showToast(message) {
 }
 
 function escapeHtml(value = "") {
-  return String(value)
+  return normalizeText(value)
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
@@ -144,8 +144,19 @@ function escapeHtml(value = "") {
     .replaceAll("'", "&#039;");
 }
 
+function normalizeText(value = "") {
+  return String(value)
+    .normalize("NFC")
+    .replace(/\u00a0/g, " ")
+    .replace(/[ \t]{2,}/g, " ")
+    .replace(/\s+([,.;:!?%)]|ๆ|ฯ|”|’)/g, "$1")
+    .replace(/([“‘(])\s+/g, "$1")
+    .replace(/([,.;:!?])(?=[^\s\d])/g, "$1 ")
+    .trim();
+}
+
 function thaiText(value = "") {
-  const raw = String(value);
+  const raw = normalizeText(value);
   if (typeof Intl !== "undefined" && Intl.Segmenter) {
     const segmenter = new Intl.Segmenter("th", { granularity: "word" });
     return Array.from(segmenter.segment(raw), (part) => escapeHtml(part.segment)).join("<wbr>");
@@ -167,7 +178,7 @@ async function shareTeaching(id) {
 
   const data = {
     title: `${item.title} | ธรรมะวันนี้`,
-    text: `${item.title}\n${item.body}`,
+    text: `${normalizeText(item.title)}\n${normalizeText(item.body)}`,
     url: shareUrl(id)
   };
 
@@ -334,7 +345,7 @@ refreshIcons();
 
 if ("serviceWorker" in navigator && location.protocol !== "file:") {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./service-worker.js?v=20260629-6").then((registration) => {
+    navigator.serviceWorker.register("./service-worker.js?v=20260630-1").then((registration) => {
       registration.update();
     }).catch(() => {
       // The app remains fully usable online if service-worker registration is unavailable.

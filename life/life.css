@@ -31,8 +31,12 @@ body {
     radial-gradient(circle at 88% 20%, rgba(237, 247, 218, 0.78), transparent 34%),
     linear-gradient(145deg, #f2fbff 0%, #f7fbf4 48%, #fff8df 100%);
   color: var(--ink);
+  font-family: "Sukhumvit Set", "Thonburi", "Noto Sans Thai", "Helvetica Neue", Arial, sans-serif;
   font-size: 17px;
   line-height: 1.72;
+  line-break: auto;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {

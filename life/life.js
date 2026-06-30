@@ -48,12 +48,23 @@ let currentAge = "kids";
 let toastTimer;
 
 function escapeHtml(value = "") {
-  return String(value)
+  return normalizeText(value)
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function normalizeText(value = "") {
+  return String(value)
+    .normalize("NFC")
+    .replace(/\u00a0/g, " ")
+    .replace(/[ \t]{2,}/g, " ")
+    .replace(/\s+([,.;:!?%)]|ๆ|ฯ|”|’)/g, "$1")
+    .replace(/([“‘(])\s+/g, "$1")
+    .replace(/([,.;:!?])(?=[^\s\d])/g, "$1 ")
+    .trim();
 }
 
 function renderWisdom() {

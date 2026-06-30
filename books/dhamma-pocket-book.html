@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
     <link rel="apple-touch-icon" href="../assets/pocket-book-apple-touch-icon.png?v=20260629-2">
     <link rel="manifest" href="./pocket-book.webmanifest?v=20260629-2">
-    <link rel="stylesheet" href="./pocket-book.css?v=20260626-2">
+    <link rel="stylesheet" href="./pocket-book.css?v=20260630-1">
   </head>
   <body>
     <div class="reader-shell">
@@ -67,12 +67,12 @@
 
     <section class="print-book" id="printBookContent" aria-label="ฉบับพิมพ์"></section>
 
-    <script src="../content/dhamma-library.js?v=20260629-5"></script>
-    <script src="./pocket-book.js?v=20260626-2"></script>
+    <script src="../content/dhamma-library.js?v=20260630-1"></script>
+    <script src="./pocket-book.js?v=20260630-1"></script>
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
-          navigator.serviceWorker.register("../service-worker.js?v=20260629-5").catch(() => {});
+          navigator.serviceWorker.register("../service-worker.js?v=20260630-1").catch(() => {});
         });
       }
     </script>

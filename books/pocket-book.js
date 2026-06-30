@@ -35,7 +35,7 @@ function bookArtForPage(index) {
 }
 
 function escapeHtml(value = "") {
-  return String(value)
+  return normalizeText(value)
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
@@ -43,8 +43,19 @@ function escapeHtml(value = "") {
     .replaceAll("'", "&#039;");
 }
 
+function normalizeText(value = "") {
+  return String(value)
+    .normalize("NFC")
+    .replace(/\u00a0/g, " ")
+    .replace(/[ \t]{2,}/g, " ")
+    .replace(/\s+([,.;:!?%)]|ๆ|ฯ|”|’)/g, "$1")
+    .replace(/([“‘(])\s+/g, "$1")
+    .replace(/([,.;:!?])(?=[^\s\d])/g, "$1 ")
+    .trim();
+}
+
 function thaiText(value = "") {
-  const raw = String(value);
+  const raw = normalizeText(value);
   if (typeof Intl !== "undefined" && Intl.Segmenter) {
     const segmenter = new Intl.Segmenter("th", { granularity: "word" });
     return Array.from(segmenter.segment(raw), (part) => escapeHtml(part.segment)).join("<wbr>");
